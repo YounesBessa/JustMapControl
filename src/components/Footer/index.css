@@ -12,6 +12,7 @@ div.FooterContent{
 p.FooterText{
   font-size: 14px;
   color: white;
+  text-align: center;
 }
 
 /* DESKTOP */
