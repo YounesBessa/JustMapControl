@@ -1,7 +1,7 @@
-import "./ResumMatch.css";
+import "./ResumeMatch.css";
 import React from "react";
 
-const ResumMatch = () => {
+const ResumeMatch = () => {
   const [matchlist, setmatchlist] = React.useState();
   const axios = require("axios");
   async function getAllmatchs() {
@@ -65,4 +65,4 @@ const ResumMatch = () => {
 
   return <div>{listing}</div>;
 };
-export default ResumMatch;
+export default ResumeMatch;
