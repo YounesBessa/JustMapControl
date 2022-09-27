@@ -8,7 +8,6 @@ div.FooterContainer{
 div.FooterContent{
   display: flex;
   align-items: center;
-  margin-top: 20px;
 }
 p.FooterText{
   font-size: 14px;
