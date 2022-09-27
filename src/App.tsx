@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import ResumMatch from './Components/ResumMatch/ResumMatch';
+import ResumeMatch from './components/ResumeMatch/ResumeMatch';
 import Header from './components/Header';
 import Searchbar from './components/Searchbar';
 import Footer from './components/Footer';
@@ -10,7 +10,7 @@ function App() {
     <div className="App">
       <Header/>
       <Searchbar/>
-      <ResumMatch />
+      <ResumeMatch />
       <Footer/>
     </div>
   );
