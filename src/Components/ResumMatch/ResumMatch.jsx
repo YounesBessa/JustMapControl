@@ -1,36 +1,68 @@
-import './ResumMatch.css';
+import "./ResumMatch.css";
+import React from "react";
 
-const ResumMatch = ({}) => {
+const ResumMatch = () => {
+  const [matchlist, setmatchlist] = React.useState();
+  const axios = require("axios");
+  async function getAllmatchs() {
+    try {
+      const response = await axios.get(
+        process.env.REACT_APP_API_URL +
+          "matchs/s2sXQCDQcxhNXQsspjvRNy7R_jdq1deol9qgTWiT-h9kBSfUNYat4WMjRwl39vAlIQus9UA1vo1jwQ",
+        {
+          headers: {
+            "Access-Control-Allow-Origin": "*",
+            "Access-Control-Allow-Headers": "*",
+          },
+        }
+      );
+      setmatchlist(response.data);
+      return response.data;
+    } catch (error) {
+      return [];
+    }
+  }
 
-    return(
-        <div>
-            <div class="flex container-vic">
-                <div class="flex dark-container">
-                    <p class="result-vic">Victoire</p>
-                    <div class="flex info">
-                        <p>Time</p>
-                        <p>KDA</p>
-                    </div>
-                </div>
-                <div class="flex image">
-                    <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.pinimg.com%2Foriginals%2F52%2F59%2F23%2F525923ca003a0914085c833efc4d8901.jpg&f=1&nofb=1&ipt=8bd7652879e88fb80603b748b8386d1d2060b3bfe44d768ed3bc281e9d0637d4&ipo=images" />
-                    <p class="fly">LVL</p>
-                </div>
+  React.useEffect(() => {
+    getAllmatchs();
+  });
+
+  if (matchlist) {
+    var listing = matchlist.map((match) => {
+      var url =
+        "https://ddragon.leagueoflegends.com/cdn/12.18.1/img/champion/" +
+        match.championName +
+        ".png";
+      var win = "";
+      var winclass = "";
+      if (match.win) {
+        win = <p className="result-vic">Victoire</p>;
+        winclass = "flex container-vic";
+      } else {
+        win = <p className="result">Défaite</p>;
+        winclass = "flex container";
+      }
+      var html = (
+        <div key={match.id} className={winclass}>
+          <div className="flex dark-container">
+            {win}
+            <div className="flex info">
+              <p>{(match.timePlayed / 60).toFixed(2).replace(".", ":")}</p>
+              <p>
+                {match.kills}/{match.deaths}/{match.assists}
+              </p>
             </div>
-            <div class="flex container">
-                <div class="flex dark-container">
-                    <p class="result">Défaite</p>
-                    <div class="flex info">
-                        <p>Time</p>
-                        <p>KDA</p>
-                    </div>
-                </div>
-                <div class="flex image">
-                    <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.pinimg.com%2Foriginals%2F52%2F59%2F23%2F525923ca003a0914085c833efc4d8901.jpg&f=1&nofb=1&ipt=8bd7652879e88fb80603b748b8386d1d2060b3bfe44d768ed3bc281e9d0637d4&ipo=images" />
-                    <p class="fly">LVL</p>
-                </div>
-            </div>
+          </div>
+          <div className="flex image">
+            <img src={url} alt="icon du champion" />
+            <p className="fly">{match.champLevel}</p>
+          </div>
         </div>
-    )
-}
+      );
+      return html;
+    });
+  }
+
+  return <div>{listing}</div>;
+};
 export default ResumMatch;
