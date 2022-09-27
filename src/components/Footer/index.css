@@ -1,0 +1,36 @@
+div.FooterContainer{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 50px 0;
+}
+ul.Social{
+  display: flex;
+  align-items: center;
+}
+li.SocialItem{
+  margin: 0 5px;
+}
+a.SocialLink{
+  font-size: 20px;
+}
+i.SocialIcon{
+  color: white;
+}
+ul.Lang{
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+}
+div.LangItem{
+  margin: 0 5px;
+}
+a.LangLink{
+  color: white;
+  font-weight: bold;
+}
+
+/* DESKTOP */
+@media only screen and (min-width: 600px) {
+
+}
