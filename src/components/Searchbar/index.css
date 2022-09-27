@@ -5,6 +5,9 @@ div.SeachbarWrap{
   left: 50%;
   transform: translate(-50%, -50%);
 }
+select.region-select{
+  border: 3px solid #00B4CC;
+}
 div.Searchbar{
   width: 100%;
   position: relative;
@@ -16,7 +19,6 @@ input.SearchTerm{
   border-right: none;
   padding: 5px;
   height: 20px;
-  border-radius: 5px 0 0 5px;
   outline: none;
   color: #9DBFAF;
 }
