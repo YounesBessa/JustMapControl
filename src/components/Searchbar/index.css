@@ -1,0 +1,48 @@
+div.SeachbarWrap{
+  width: 30%;
+  display: flex;
+  margin: 0 auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  justify-content: center;
+  align-items: center;
+}
+select.region-select{
+  border: 3px solid red;
+  border-right: none;
+}
+div.Searchbar{
+  width: 100%;
+  position: relative;
+  display: flex;
+}
+input.SearchTerm{
+  width: 100%;
+  border: 3px solid red;
+  border-left: none;
+  border-right: none;
+  padding: 5px;
+  height: 20px;
+  outline: none;
+  color: #9DBFAF;
+}
+button.SearchButton{
+  width: 40px;
+  height: 36px;
+  border: 1px solid red;
+  background: red;
+  text-align: center;
+  color: #fff;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  font-size: 20px;
+}
+span.ButtonText{
+  color: white;
+  font-size: 20px;  
+}
+
+/* DESKTOP */
+@media only screen and (min-width: 600px) {
+
+}
