@@ -3,31 +3,16 @@ div.FooterContainer{
   flex-direction: column;
   align-items: center;
   padding: 50px 0;
+  background-color: red;
 }
-ul.Social{
-  display: flex;
-  align-items: center;
-}
-li.SocialItem{
-  margin: 0 5px;
-}
-a.SocialLink{
-  font-size: 20px;
-}
-i.SocialIcon{
-  color: white;
-}
-ul.Lang{
+div.FooterContent{
   display: flex;
   align-items: center;
   margin-top: 20px;
 }
-div.LangItem{
-  margin: 0 5px;
-}
-a.LangLink{
+p.FooterText{
+  font-size: 14px;
   color: white;
-  font-weight: bold;
 }
 
 /* DESKTOP */
