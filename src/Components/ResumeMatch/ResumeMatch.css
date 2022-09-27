@@ -9,7 +9,7 @@
     width: 80%;
     background-color: #5383E8;
     border-radius: 10px;
-    margin: 0 auto;
+    margin: 10px auto;
     flex-direction: row;
     color: #FFF;
 }
@@ -24,7 +24,7 @@
     width: 80%;
     background-color: #F12B15;
     border-radius: 10px;
-    margin: 0 auto;
+    margin: 10px auto;
     flex-direction: row;
     color: #FFF;
 }
