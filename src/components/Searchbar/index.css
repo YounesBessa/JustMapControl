@@ -1,0 +1,107 @@
+form.SearchbarContainer{
+  position: relative;
+  margin-top: 60px;
+  display: flex;
+  color: white;
+  background-color: black;
+  backdrop-filter: blur(7px);
+  padding: 10px;
+  width: 60%;
+  max-width: 600px;
+  border-radius: 99999px;
+  transition: none;
+  margin-left: auto;
+  margin-right: auto;
+  z-index: 2;
+  @media (max-width:600px) {
+    width: 95%;
+  }
+}
+input.FakeField{
+  background: none;
+  font-size: 13px;
+  border: none;
+  line-height: 1.5;
+  display: block;
+  outline: none;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
+  padding: 0 15px;
+  font-size: 20px;
+}
+div.Overlay{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  border-radius: 99px;
+  display: flex;
+  align-items: center;
+  left: 0;
+  top: 0;
+  transition: all 0.2s;
+  pointer-events: none;
+}
+div.FieldContainer{
+  border-radius: 99px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transition: all 0.2s;
+  position: relative;
+  pointer-events: auto;
+  padding: 0 30px;
+  text-align: left;
+  background-color: black;
+  flex: 1;
+}
+label.Label{
+  background: none;
+  font-size: 13px;
+  border: none;
+  line-height: 1.5;
+  display: block;
+  outline: none;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+input.Field{
+  background: none;
+  font-size: 13px;
+  border: none;
+  line-height: 1.5;
+  display: block;
+  outline: none;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-weight: bold;
+  width: 100%;
+  padding: 0;
+}
+button.SubmitButton{
+  max-width: 50px;
+  max-height: 50px;
+  width: 100%;
+  height: 100%;
+  border-radius: 25px;
+  font-weight: bold;
+  font-size: 30px;
+  letter-spacing: -6px;
+  white-space: nowrap;
+  text-align: center;
+  padding: 0;
+  user-select: none;
+}
+img.SubmitIcon{
+  height: 50px;
+  width: 25px;
+}
+
+/* DESKTOP */
+@media only screen and (min-width: 600px) {
+
+}
