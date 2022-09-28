@@ -2,13 +2,14 @@ import "./ResumeMatch.css";
 import React from "react";
 
 const ResumeMatch = () => {
+  var puuid = "YCMb0W79SBOE95yo6y0IR4_QmjfDz87aGEpYsXcEoMtgFU7RhCIS6XmV2C_R4v48j3SlrrIYwIyKeQ";
   const [matchlist, setmatchlist] = React.useState();
   const axios = require("axios");
-  async function getAllmatchs() {
+  async function getAllmatchs(puuid) {
     try {
       const response = await axios.get(
         process.env.REACT_APP_API_URL +
-          "matchs/s2sXQCDQcxhNXQsspjvRNy7R_jdq1deol9qgTWiT-h9kBSfUNYat4WMjRwl39vAlIQus9UA1vo1jwQ",
+          "matchs/" +puuid,
         {
           headers: {
             "Access-Control-Allow-Origin": "*",
@@ -24,7 +25,7 @@ const ResumeMatch = () => {
   }
 
   React.useEffect(() => {
-    getAllmatchs();
+    getAllmatchs(puuid);
   });
 
   if (matchlist) {
