@@ -2,8 +2,9 @@ import './index.css';
 
 const Beacon = ({x, y, team}) => {
     let style;
-    let left = (x/15000)*100;
-    let bottom = (y/15000)*100;
+    
+    let left = ((x + 5)/15000)*100;
+    let bottom = ((y + 5)/15000)*100;
     if(team === 100){
         style = {
             backgroundColor: '#5383E8',
@@ -11,7 +12,7 @@ const Beacon = ({x, y, team}) => {
             bottom: bottom + '%'
         };
     } else {
-        style = {
+        style = {   
             backgroundColor: '#F12B15',
             left: left + '%',
             bottom: bottom + '%'
