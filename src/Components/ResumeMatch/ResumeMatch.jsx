@@ -1,8 +1,7 @@
 import "./ResumeMatch.css";
 import React from "react";
 
-const ResumeMatch = () => {
-  var puuid = "YCMb0W79SBOE95yo6y0IR4_QmjfDz87aGEpYsXcEoMtgFU7RhCIS6XmV2C_R4v48j3SlrrIYwIyKeQ";
+const ResumeMatch = ({puuid}) => {
   const [matchlist, setmatchlist] = React.useState();
   const axios = require("axios");
   async function getAllmatchs(puuid) {
