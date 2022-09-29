@@ -45,8 +45,8 @@ const ResumeMatch = ({puuid}) => {
         winclass = "flex container";
       }
       var html = (
-        <Link to={"/match/" + match.idMatch}>
-        <div key={match.id} className={winclass}>
+        <Link to={"/match/" + match.idMatch + "/" + puuid} key={match.idMatch}>
+        <div className={winclass}>
           <div className="flex dark-container">
             {win}
             <div className="flex info">

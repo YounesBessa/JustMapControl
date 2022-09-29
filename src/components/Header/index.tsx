@@ -10,9 +10,7 @@ const Header: React.FC = () => {
         <div className="Scuttler" />
         <div className="ScuttlerText">
         <h1 className="Title">JMC</h1>
-        <h2 className="Subtitle">Just Map Control</h2>
-        <Link to="/match">Match</Link>
-        
+        <h2 className="Subtitle">Just Map Control</h2>        
         </div>
       </div>
     </div>

@@ -4,7 +4,7 @@ const Champscore = ({pseudo, invSpell1, invSpell2, champ, level, kda, dmg, cs, i
     
     let style;
 
-    if(team === '100'){
+    if(team === 100){
         style = {
             backgroundColor: 'rgb(83, 131, 232, 0.5)',
         };
