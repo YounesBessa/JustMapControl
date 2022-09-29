@@ -14,8 +14,6 @@ const Application: React.FunctionComponent<IApplicationProps> = (props) => {
                     <Route index element={<MatchPage />} />
                     <Route path=":number" element={<MatchPage />} />
                 </Route>
-                <Route path="test" element={<TestPage />} />
-                <Route path="layout" element={<LayoutComponent />}>
                     <Route index element={<MatchPage />} />
                     <Route path=":number" element={<MatchPage />} />
                 </Route>
