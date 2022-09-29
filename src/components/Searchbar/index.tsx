@@ -63,7 +63,7 @@ const Searchbar: React.FC = () => {
               id="pseudo"
               type="text"
               className="SearchTerm"
-              placeholder="What are you looking for?"
+              placeholder="Enter Summoner Name"
             />
             <button type="submit" className="SearchButton">
               <span className="ButtonText">Go</span>
