@@ -1,0 +1,135 @@
+.flex-column{
+    display: flex;
+    flex-direction: column;
+}
+.flex{
+    display: flex;
+}
+.middleInfo{
+    margin-top: 4%;
+    margin-bottom: 4%;
+    color: #FFF;
+}
+.blueObj{
+    justify-content: space-around;
+    margin-bottom: 3%;
+}
+.redObj{
+    justify-content: space-around;
+    margin-top: 3%;
+}
+.obj{
+    align-items: center;
+    gap: 2px;
+    color: #FFF;
+}
+
+.totGolds{
+    margin-top: 3%;
+}
+.statGolds{
+    justify-content: space-around;
+    position: relative;
+}
+.goldBar{
+    display: flex;
+}
+.statGolds li{
+    position: absolute;
+}
+.rGold{
+    top: -22px;
+    right: 10px;
+}
+.totGold{
+    top: -22px;
+    right: auto;
+    left: auto;
+}
+.bGold{
+    top: -22px;
+    left: 10px;
+}
+.blueGolds{
+    background-color: rgb(83, 131, 232, 0.5);
+    height: 30px;
+}
+.redGolds{
+    background-color: rgb(241, 43, 21, 0.5);
+    height: 30px;
+}
+
+.statKills{
+    justify-content: space-around;
+    position: relative;
+}
+.killBar{
+    display: flex;
+}
+.statKills li{
+    position: absolute;
+}
+.rKill{
+    top: -22px;
+    right: 10px;
+}
+.totKill{
+    top: -22px;
+    right: auto;
+    left: auto;
+}
+.bKill{
+    top: -22px;
+    left: 10px;
+}
+.blueKills{
+    background-color: rgb(83, 131, 232, 0.5);
+    height: 30px;
+}
+.redKills{
+    background-color: rgb(241, 43, 21, 0.5);
+    height: 30px;
+}
+
+.bNashImg{
+    background-image: url(https://s-lol-web.op.gg/images/icon/icon-baron.svg?v=1664158120569);
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 20px;
+    height: 20px;
+}
+.bDragImg{
+    background-image: url(https://s-lol-web.op.gg/images/icon/icon-dragon.svg?v=1664158120569);
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 20px;
+    height: 20px;
+}
+.bTowerImg{
+    background-image: url(https://s-lol-web.op.gg/images/icon/icon-tower.svg?v=1664158120569);
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 20px;
+    height: 20px;
+}
+.rNashImg{
+    background-image: url(https://s-lol-web.op.gg/images/icon/icon-baron-r.svg?v=1664158120569);
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 20px;
+    height: 20px;
+}
+.rDragImg{
+    background-image: url(https://s-lol-web.op.gg/images/icon/icon-dragon-r.svg?v=1664158120569);
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 20px;
+    height: 20px;
+}
+.rTowerImg{
+    background-image: url(https://s-lol-web.op.gg/images/icon/icon-tower-r.svg?v=1664158120569);
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 20px;
+    height: 20px;
+}
