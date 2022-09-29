@@ -1,5 +1,7 @@
 import "./ResumeMatch.css";
 import React from "react";
+import { Link } from 'react-router-dom';
+
 
 const ResumeMatch = ({puuid}) => {
   const [matchlist, setmatchlist] = React.useState();
@@ -43,6 +45,7 @@ const ResumeMatch = ({puuid}) => {
         winclass = "flex container";
       }
       var html = (
+        <Link to={"/match/" + match.idMatch}>
         <div key={match.id} className={winclass}>
           <div className="flex dark-container">
             {win}
@@ -58,6 +61,7 @@ const ResumeMatch = ({puuid}) => {
             <p className="fly">{match.champLevel}</p>
           </div>
         </div>
+        </Link>
       );
       return html;
     });
