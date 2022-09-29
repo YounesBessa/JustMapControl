@@ -15,7 +15,7 @@ const Champscore = ({pseudo, invSpell1, invSpell2, champ, level, kda, dmg, cs, i
     }
 
     return(
-        <div className="flex container" style={style}>
+        <div className="flex container-score" style={style}>
             <div className="relat">
                 <img className="imgChamp" src={champ} alt={champ}></img>
                 <p className="level">{level}</p>
