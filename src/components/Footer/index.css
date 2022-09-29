@@ -4,6 +4,7 @@ div.FooterContainer{
   align-items: center;
   padding: 50px 0;
   background-color: red;
+  margin-top: 10px;
 }
 div.FooterContent{
   display: flex;
