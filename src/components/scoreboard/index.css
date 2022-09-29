@@ -8,6 +8,7 @@
 .middleInfo{
     margin-top: 4%;
     margin-bottom: 4%;
+    color: #FFF;
 }
 .blueObj{
     justify-content: space-around;
@@ -20,6 +21,7 @@
 .obj{
     align-items: center;
     gap: 2px;
+    color: #FFF;
 }
 
 .totGolds{
@@ -49,11 +51,11 @@
     left: 10px;
 }
 .blueGolds{
-    background-color: #5383E8;
+    background-color: rgb(83, 131, 232, 0.5);
     height: 30px;
 }
 .redGolds{
-    background-color: #F12B15;
+    background-color: rgb(241, 43, 21, 0.5);
     height: 30px;
 }
 
@@ -81,11 +83,11 @@
     left: 10px;
 }
 .blueKills{
-    background-color: #5383E8;
+    background-color: rgb(83, 131, 232, 0.5);
     height: 30px;
 }
 .redKills{
-    background-color: #F12B15;
+    background-color: rgb(241, 43, 21, 0.5);
     height: 30px;
 }
 

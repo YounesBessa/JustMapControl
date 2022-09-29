@@ -6,11 +6,11 @@ const Champscore = ({pseudo, invSpell1, invSpell2, champ, level, kda, dmg, cs, i
 
     if(team === '100'){
         style = {
-            backgroundColor: '#5383E8',
+            backgroundColor: 'rgb(83, 131, 232, 0.5)',
         };
     } else {
         style = {   
-            backgroundColor: '#F12B15',
+            backgroundColor: 'rgb(241, 43, 21, 0.5)',
         }
     }
 
