@@ -1,6 +1,6 @@
 import './index.css';
 
-const Map = ({}) => {
+const Map = () => {
 
     return(
         <div className="Map">
