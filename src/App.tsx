@@ -1,9 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import LayoutComponent from './components/Layout';
 import MatchPage from './pages/Match';
 import HomePage from './pages/Home';
-import TestPage from './pages/Test';
 
 export interface IApplicationProps {}
 
