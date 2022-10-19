@@ -31,13 +31,6 @@
     width: 25px;
     height: 25px;
 }
-.imgItem{
-    width: 25px;
-    height: 25px;
-}
-.items{
-    align-items: center;
-}
 .damage{
     border-width: 1px;
     border-color: black;
