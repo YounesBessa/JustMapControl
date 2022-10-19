@@ -1,4 +1,5 @@
 import "./index.css";
+import EmptyItem from "../images/emptyItem.png";
 
 const Champscore = ({
   pseudo,
@@ -30,6 +31,42 @@ const Champscore = ({
     };
   }
 
+  if(item1 == 0){
+    item1Src = EmptyItem;
+  } else {
+    item1Src = "http://ddragon.leagueoflegends.com/cdn/12.20.1/img/item/" + item1 + ".png";
+  }
+  if(item2 == 0){
+    item2Src = EmptyItem;
+  } else {
+    item2Src = "http://ddragon.leagueoflegends.com/cdn/12.20.1/img/item/" + item2 + ".png";
+  }
+  if(item3 == 0){
+    item3Src = EmptyItem;
+  } else {
+    item3Src = "http://ddragon.leagueoflegends.com/cdn/12.20.1/img/item/" + item3 + ".png";
+  }
+  if(item4 == 0){
+    item4Src = EmptyItem;
+  } else {
+    item4Src = "http://ddragon.leagueoflegends.com/cdn/12.20.1/img/item/" + item4 + ".png";
+  }
+  if(item5 == 0){
+    item5Src = EmptyItem;
+  } else {
+    item5Src = "http://ddragon.leagueoflegends.com/cdn/12.20.1/img/item/" + item5 + ".png";
+  }
+  if(item6 == 0){
+    item6Src = EmptyItem;
+  } else {
+    item6Src = "http://ddragon.leagueoflegends.com/cdn/12.20.1/img/item/" + item6 + ".png";
+  }
+  if(item7 == 0){
+    item7Src = EmptyItem;
+  } else {
+    item7Src = "http://ddragon.leagueoflegends.com/cdn/12.20.1/img/item/" + item7 + ".png";
+  }
+
   return (
     <div className="flex container-score" style={style}>
       <div className="relat">
@@ -54,18 +91,14 @@ const Champscore = ({
           <img
             className="imgItem"
             src={
-              "http://ddragon.leagueoflegends.com/cdn/12.20.1/img/item/" +
-              item1 +
-              ".png"
+              item1Src
             }
             alt="item1"
           ></img>
           <img
             className="imgItem"
             src={
-              "http://ddragon.leagueoflegends.com/cdn/12.20.1/img/item/" +
-              item2 +
-              ".png"
+              item2Src
             }
             alt="item2"
           ></img>
@@ -74,18 +107,14 @@ const Champscore = ({
           <img
             className="imgItem"
             src={
-              "http://ddragon.leagueoflegends.com/cdn/12.20.1/img/item/" +
-              item3 +
-              ".png"
+              item3Src
             }
             alt="item3"
           ></img>
           <img
             className="imgItem"
             src={
-              "http://ddragon.leagueoflegends.com/cdn/12.20.1/img/item/" +
-              item4 +
-              ".png"
+              item4Src
             }
             alt="item4"
           ></img>
@@ -94,18 +123,14 @@ const Champscore = ({
           <img
             className="imgItem"
             src={
-              "http://ddragon.leagueoflegends.com/cdn/12.20.1/img/item/" +
-              item5 +
-              ".png"
+              item5Src
             }
             alt="item5"
           ></img>
           <img
             className="imgItem"
             src={
-              "http://ddragon.leagueoflegends.com/cdn/12.20.1/img/item/" +
-              item6 +
-              ".png"
+              item6Src
             }
             alt="item6"
           ></img>
@@ -113,9 +138,7 @@ const Champscore = ({
         <img
           className="imgItem"
           src={
-            "http://ddragon.leagueoflegends.com/cdn/12.20.1/img/item/" +
-            item7 +
-            ".png"
+            item7Src
           }
           alt="item7"
         ></img>
