@@ -8,8 +8,11 @@ div.SeachbarWrap{
   align-items: center;
 }
 select.region-select{
-  border: 3px solid red;
+  border: 3px solid #2D2D2D;
   border-right: none;
+  background-color: #2D2D2D;
+  color: #fff;
+  border-radius: 15% 0 0 15%;
 }
 div.Searchbar{
   width: 100%;
@@ -18,19 +21,20 @@ div.Searchbar{
 }
 input.SearchTerm{
   width: 100%;
-  border: 3px solid red;
+  border: 3px solid #2D2D2D;
   border-left: none;
   border-right: none;
   padding: 5px;
   height: 20px;
   outline: none;
-  color: #9DBFAF;
+  color: #FFF;
+  background-color: #2D2D2D;
 }
 button.SearchButton{
   width: 40px;
   height: 36px;
-  border: 1px solid red;
-  background: red;
+  border: 1px solid #2D2D2D;
+  background: #2D2D2D;
   text-align: center;
   color: #fff;
   border-radius: 0 5px 5px 0;
