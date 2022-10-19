@@ -7,7 +7,6 @@ const ScoreBoard = () => {
   const { number } = useParams();
   const { puuid } = useParams();
   const [match, setmatch] = React.useState();
-  const [item, setitem] = React.useState();
 
   const axios = require("axios");
   async function getmatch(puuid) {
@@ -27,22 +26,6 @@ const ScoreBoard = () => {
     }
   }
 
-  async function getitem(id) {
-    try {
-      const response = await axios.get(
-        process.env.REACT_APP_API_URL + "spell/" + id,
-        {
-          headers: {
-            "Access-Control-Allow-Origin": "*",
-            "Access-Control-Allow-Headers": "*",
-          },
-        }
-      );
-      setitem(response.data);
-    } catch (error) {
-      return [];
-    }
-  }
   React.useEffect(() => {
     getmatch(puuid);
   });
