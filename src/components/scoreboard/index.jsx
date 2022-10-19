@@ -7,6 +7,8 @@ const ScoreBoard = () => {
   const { number } = useParams();
   const { puuid } = useParams();
   const [match, setmatch] = React.useState();
+  const [item, setitem] = React.useState();
+
   const axios = require("axios");
   async function getmatch(puuid) {
     try {
@@ -25,10 +27,25 @@ const ScoreBoard = () => {
     }
   }
 
+  async function getitem(id) {
+    try {
+      const response = await axios.get(
+        process.env.REACT_APP_API_URL + "spell/" + id,
+        {
+          headers: {
+            "Access-Control-Allow-Origin": "*",
+            "Access-Control-Allow-Headers": "*",
+          },
+        }
+      );
+      setitem(response.data);
+    } catch (error) {
+      return [];
+    }
+  }
   React.useEffect(() => {
     getmatch(puuid);
   });
-
   if (match) {
     var listing = match.map((matchdetails) => {
       var blueTeam = matchdetails.matchJson.participants.map((participant) => {
@@ -177,7 +194,6 @@ const ScoreBoard = () => {
       return html;
     });
   }
-
-  return <div>{listing}</div>;
+  return listing;
 };
 export default ScoreBoard;
