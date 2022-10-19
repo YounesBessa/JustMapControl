@@ -1,87 +1,87 @@
-  /* MOBILE */
+/* MOBILE */
 
-.container-vic{
-    width: 80%;
-    background-color: #5383E8;
-    border-radius: 10px;
-    margin: 10px auto;
-    flex-direction: row;
-    color: #FFF;
+.container-vic {
+  width: 80%;
+  background-color: #5383e8;
+  border-radius: 10px;
+  margin: 10px auto;
+  flex-direction: row;
+  color: #fff;
 }
-.result-vic{
-    color: #5383E8;
+.result-vic {
+  color: #5383e8;
 }
-.flex{
-    display: flex;
-}
-
-.container{
-    width: 80%;
-    background-color: #F12B15;
-    border-radius: 10px;
-    margin: 10px auto;
-    flex-direction: row;
-    color: #FFF;
+.flex {
+  display: flex;
 }
 
-.result{
-    color: #F12B15;
+.container {
+  width: 80%;
+  background-color: #f12b15;
+  border-radius: 10px;
+  margin: 10px auto;
+  flex-direction: row;
+  color: #fff;
 }
 
-.dark-container{
-    background: rgba(0, 0, 0, 0.5);
-    width: 75%;
-    margin-left: 5%;
-    flex-direction: column;
-}
-.dark-container p{
-    margin: 0 auto;
-    padding-top: 5%;
-}
-.dark-container .info{
-    justify-content: start-left;
+.container-champ {
+  width: 100%;
+  height: 100%;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.image{
-    width: 26%;
-    flex-direction: column;
-    position: relative;
+.result {
+  color: #f12b15;
 }
 
-.image img{
-    width: 100%;
-    height: 100%;
+.dark-container {
+  background: rgba(0, 0, 0, 0.5);
+  width: 90%;
+  margin : 0 2%;
+  flex-direction: column;
+}
+.dark-container p {
+  margin: 0 auto;
+  padding-top: 5%;
+}
+.dark-container .info {
+  justify-content: start-left;
 }
 
-.fly{
-    position: absolute;
-    top: 40%;
-    right: 70%;
-    text-shadow: 0 0 5px #000;
+.image {
+  width: 26%;
+  flex-direction: column;
+  position: relative;
 }
-  
+
+.image img {
+  width: 100%;
+  height: 100%;
+}
+
+.fly {
+  position: absolute;
+  top: 40%;
+  right: 70%;
+  text-shadow: 0 0 5px #000;
+}
+
 /* DESKTOP */
 @media only screen and (min-width: 600px) {
-    .container{
-        width: 50%;
-        font-size: 25px;
-    }
-    .container-vic{
-        width: 50%;
-        font-size: 25px;
-    }
-    .image{
-        width: 20%;
-    }
-    .fly{
-        top: 45%;
-        right: 75%;
-    }
-
-
-
-
-
-    
+  .container {
+    width: 50%;
+    font-size: 25px;
   }
-  
+  .container-vic {
+    width: 50%;
+    font-size: 25px;
+  }
+  .image {
+    width: 20%;
+  }
+  .fly {
+    top: 45%;
+    right: 75%;
+  }
+}
