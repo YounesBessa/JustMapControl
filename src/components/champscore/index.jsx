@@ -1,5 +1,5 @@
 import "./index.css";
-import EmptyItem from "../images/emptyItem.png";
+import EmptyItem from "../../images/emptyItem.png";
 
 const Champscore = ({
   pseudo,
@@ -30,6 +30,15 @@ const Champscore = ({
       backgroundColor: "rgb(241, 43, 21, 0.5)",
     };
   }
+
+  //define all itemSrc properties
+    let item1Src = EmptyItem;
+    let item2Src = EmptyItem;
+    let item3Src = EmptyItem;
+    let item4Src = EmptyItem;
+    let item5Src = EmptyItem;
+    let item6Src = EmptyItem;
+    let item7Src = EmptyItem;
 
   if(item1 == 0){
     item1Src = EmptyItem;
