@@ -76,6 +76,26 @@ const Champscore = ({
     item7Src = "http://ddragon.leagueoflegends.com/cdn/12.20.1/img/item/" + item7 + ".png";
   }
 
+  const spell = {
+    21: "SummonerBarrier",
+    1: "SummonerBoost",
+    14: "SummonerDot",
+    3: "SummonerExhaust",
+    4: "SummonerFlash",
+    6: "SummonerHaste",
+    7: "SummonerHeal",
+    13: "SummonerMana",
+    30: "SummonerPoroRecall",
+    31: "SummonerPoroThrow",
+    11: "SummonerSmite",
+    39: "SummonerSnowURFSnowball_Mark",
+    32: "SummonerSnowball",
+    12: "SummonerTeleport",
+  };
+
+  var invspell1 = "https://ddragon.leagueoflegends.com/cdn/12.18.1/img/spell/"+spell[invSpell1]+".png";
+  var invspell2 = "https://ddragon.leagueoflegends.com/cdn/12.18.1/img/spell/"+spell[invSpell2]+".png";
+
   return (
     <div className="flex container-score" style={style}>
       <div className="relat">
@@ -83,8 +103,8 @@ const Champscore = ({
         <p className="level">{level}</p>
       </div>
       <div className="flex-column">
-        <img className="imgSpell" src={invSpell1} alt={invSpell1}></img>
-        <img className="imgSpell" src={invSpell2} alt={invSpell2}></img>
+        <img className="imgSpell" src={invspell1} alt="sort1"></img>
+        <img className="imgSpell" src={invspell2} alt="sort2"></img>
       </div>
       <div className="flex-column gap">
         <p>{pseudo}</p>
