@@ -1,5 +1,5 @@
 div.SeachbarWrap{
-  width: 90%;
+  /* width: 30%; */
   display: flex;
   margin: 0 auto;
   margin-top: 10px;
@@ -8,11 +8,10 @@ div.SeachbarWrap{
   align-items: center;
 }
 select.region-select{
-  border: 3px solid #2D2D2D;
-  border-right: none;
   background-color: #2D2D2D;
   color: #fff;
-  border-radius: 15% 0 0 15%;
+  border-radius: 5px 0 0 5px;
+  border: none;
 }
 div.Searchbar{
   width: 100%;
@@ -21,25 +20,26 @@ div.Searchbar{
 }
 input.SearchTerm{
   width: 100%;
-  border: 3px solid #2D2D2D;
-  border-left: none;
-  border-right: none;
+  border: none;
   padding: 5px;
   height: 20px;
   outline: none;
   color: #FFF;
   background-color: #2D2D2D;
+  border-top: 1px solid #2D2D2D;
+  border-bottom: 1px solid #2D2D2D;
 }
 button.SearchButton{
   width: 40px;
-  height: 36px;
-  border: 1px solid #2D2D2D;
+  height: 32px;
+  border:none;
   background: #2D2D2D;
   text-align: center;
   color: #fff;
   border-radius: 0 5px 5px 0;
   cursor: pointer;
   font-size: 20px;
+  border: 1px solid #2D2D2D;
 }
 span.ButtonText{
   color: white;
