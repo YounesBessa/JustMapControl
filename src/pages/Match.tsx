@@ -7,14 +7,18 @@ import Footer from "../components/Footer";
 import { useParams } from "react-router-dom";
 
 export interface IMatchPageProps {}
+type Matchdetails = {
+  id: number;
+  idMatch: string;
+  matchJson: {
+    [key: string]:any
+  }
+}
 
 const MatchPage: React.FunctionComponent<IMatchPageProps> = (props) => {
-  const x = 5420;
-  const y = 12566;
-  const team = "200";
   const { number } = useParams();
 
-  const [matchtimeline, setmatch] = React.useState();
+  const [matchtimeline, setmatch] = React.useState<any>();
 
   const axios = require("axios");
   async function getmatch(idmatch: string | undefined) {
@@ -37,12 +41,70 @@ const MatchPage: React.FunctionComponent<IMatchPageProps> = (props) => {
   React.useEffect(() => {
     getmatch(number);
   });
+
+  /*!matchtimeline && matchtimeline.map((matchdetails:Matchdetails) =>
+    matchdetails.matchJson.frames.map((frame:{[key: string]:any}) =>
+      frame.events.map((event:{[key: string]:any}) => {
+          if(event.type === "CHAMPION_KILL"){
+            const x = event.position.x;
+            const y = event.position.y;
+            let team = "";
+            if(event.killerId <= 5){
+              team = "100";
+            } else {
+              team = "200";
+            }
+            return <Beacon x={x} y={y} team={team} />
+          }
+        }
+      )
+    )
+  )*/
+  console.log(matchtimeline);
+  if(matchtimeline){
+    matchtimeline.map((matchdetails:Matchdetails) =>
+      matchdetails.matchJson.frames.map((frame:{[key: string]:any}) =>
+        frame.events.map((event:{[key: string]:any}) => {
+            if(event.type === "CHAMPION_KILL"){
+              const x = event.position.x;
+              const y = event.position.y;
+              let team = "";
+              if(event.killerId <= 5){
+                team = "100";
+              } else {
+                team = "200";
+              }
+              return <Beacon x={x} y={y} team={team} />
+            }
+          }
+        )
+      )
+    )
+  }
+
   return (
     <div>
       <Header />
       <div className="mapContainer">
         <Map />
-        <Beacon x={x} y={y} team={team} />
+        {/*!matchtimeline && matchtimeline.map((matchdetails:Matchdetails) =>
+          matchdetails.matchJson.frames.map((frame:{[key: string]:any}) =>
+            frame.events.map((event:{[key: string]:any}) => {
+                if(event.type === "CHAMPION_KILL"){
+                  const x = event.position.x;
+                  const y = event.position.y;
+                  let team = "";
+                  if(event.killerId <= 5){
+                    team = "100";
+                  } else {
+                    team = "200";
+                  }
+                  return <Beacon x={x} y={y} team={team} />
+                }
+              }
+            )
+          )
+            )*/}
       </div>
       <div className="ScorBoard">
         <ScoreBoard />
