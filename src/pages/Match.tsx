@@ -18,7 +18,7 @@ type Matchdetails = {
 const MatchPage: React.FunctionComponent<IMatchPageProps> = (props) => {
   const { number } = useParams();
 
-  const [matchtimeline, setmatch] = React.useState<any>();
+  const [matchtimeline, setmatch] = React.useState<any>("vide");
 
   const axios = require("axios");
   async function getmatch(idmatch: string | undefined) {
@@ -61,9 +61,8 @@ const MatchPage: React.FunctionComponent<IMatchPageProps> = (props) => {
     )
   )*/
   console.log(matchtimeline);
-  if(matchtimeline){
-    matchtimeline.map((matchdetails:Matchdetails) =>
-      matchdetails.matchJson.frames.map((frame:{[key: string]:any}) =>
+  if(matchtimeline!=="vide"){
+    matchtimeline.matchJson.frames.map((frame:{[key: string]:any}) =>
         frame.events.map((event:{[key: string]:any}) => {
             if(event.type === "CHAMPION_KILL"){
               const x = event.position.x;
@@ -79,7 +78,7 @@ const MatchPage: React.FunctionComponent<IMatchPageProps> = (props) => {
           }
         )
       )
-    )
+    
   }
 
   return (
@@ -106,8 +105,8 @@ const MatchPage: React.FunctionComponent<IMatchPageProps> = (props) => {
           )
             )*/}
       </div>
-      <div className="ScorBoard">
-        <ScoreBoard />
+      <div className="ScorBoard" key="1">
+        <ScoreBoard key="2" />
       </div>
       <Footer />
     </div>
