@@ -19,6 +19,7 @@ div.Searchbar{
 }
 input.SearchTerm{
   width: 100%;
+  min-width: 100px;
   border: none;
   padding: 5px;
   height: 20px;
