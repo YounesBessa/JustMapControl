@@ -60,10 +60,10 @@ const ScoreBoard = () => {
               item1={participant.item1}
               item2={participant.item2}
               item3={participant.item3}
-              item4={participant.item4}
-              item5={participant.item5}
-              item6={participant.item6}
-              item7={participant.item0}
+              item4={participant.item0}
+              item5={participant.item4}
+              item6={participant.item5}
+              item7={participant.item6}
               team={participant.teamId}
             />
           );
@@ -100,10 +100,10 @@ const ScoreBoard = () => {
               item1={participant.item1}
               item2={participant.item2}
               item3={participant.item3}
-              item4={participant.item4}
-              item5={participant.item5}
-              item6={participant.item6}
-              item7={participant.item0}
+              item4={participant.item0}
+              item5={participant.item4}
+              item6={participant.item5}
+              item7={participant.item6}
               team={participant.teamId}
             />
           );

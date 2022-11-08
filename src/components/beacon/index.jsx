@@ -5,7 +5,7 @@ const Beacon = ({x, y, team}) => {
     
     let left = ((x + 5)/15000)*100;
     let bottom = ((y + 5)/15000)*100;
-    if(team === 100){
+    if(team === '100'){
         style = {
             backgroundColor: '#5383E8',
             left: left + '%',
