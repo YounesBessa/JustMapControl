@@ -2,13 +2,14 @@ import "./index.css";
 import React from "react";
 import { useParams } from "react-router-dom";
 import Champscore from "../champscore";
-import axios from 'axios';
-
+import axios from "axios";
 
 const ScoreBoard = () => {
   const { number } = useParams();
   const { puuid } = useParams();
   const [match, setmatch] = React.useState();
+  var totalBgold = 0;
+  var totalRgold = 0;
 
   async function getmatch(puuid) {
     try {
@@ -26,92 +27,102 @@ const ScoreBoard = () => {
   }, []);
   if (match) {
     var listing = match.map((matchdetails) => {
-      var blueTeam = matchdetails.matchJson.participants.map((participant,index) => {
-        if (participant.teamId === 100) {
-          var blueTeam = (
-            <Champscore
-              pseudo={participant.summonerName}
-              invSpell1={
-                participant.summoner1Id
-              }
-              invSpell2={
-                participant.summoner2Id
-              }
-              champ={
-                "https://ddragon.leagueoflegends.com/cdn/12.18.1/img/champion/" +
-                participant.championName +
-                ".png"
-              }
-              level={participant.champLevel}
-              kda={
-                participant.kills +
-                "/" +
-                participant.deaths +
-                "/" +
-                participant.assists
-              }
-              dmg={participant.totalDamageDealt}
-              cs={participant.totalMinionsKilled}
-              item1={participant.item1}
-              item2={participant.item2}
-              item3={participant.item3}
-              item4={participant.item0}
-              item5={participant.item4}
-              item6={participant.item5}
-              item7={participant.item6}
-              team={participant.teamId}
-              index={index}
-              key={participant.summonerName}
-            />
-          );
+      var blueTeam = matchdetails.matchJson.participants.map(
+        (participant, index) => {
+          if (participant.teamId === 100) {
+            totalBgold += participant.goldEarned;
+            var blueTeam = (
+              <Champscore
+                pseudo={participant.summonerName}
+                invSpell1={participant.summoner1Id}
+                invSpell2={participant.summoner2Id}
+                champ={
+                  "https://ddragon.leagueoflegends.com/cdn/12.18.1/img/champion/" +
+                  participant.championName +
+                  ".png"
+                }
+                level={participant.champLevel}
+                kda={
+                  participant.kills +
+                  "/" +
+                  participant.deaths +
+                  "/" +
+                  participant.assists
+                }
+                dmg={participant.totalDamageDealt}
+                cs={participant.totalMinionsKilled}
+                item1={participant.item1}
+                item2={participant.item2}
+                item3={participant.item3}
+                item4={participant.item0}
+                item5={participant.item4}
+                item6={participant.item5}
+                item7={participant.item6}
+                team={participant.teamId}
+                index={index}
+                key={participant.summonerName}
+              />
+            );
+          }
+          return blueTeam;
         }
-        return blueTeam;
-      });
+      );
 
-      var redTeam = matchdetails.matchJson.participants.map((participant,index) => {
-        if (participant.teamId === 200) {
-          var redTeam = (
-            <Champscore
-              pseudo={participant.summonerName}
-              invSpell1={
-                participant.summoner1Id
-              }
-              invSpell2={
-                participant.summoner2Id
-              }
-              champ={
-                "https://ddragon.leagueoflegends.com/cdn/12.18.1/img/champion/" +
-                participant.championName +
-                ".png"
-              }
-              level={participant.champLevel}
-              kda={
-                participant.kills +
-                "/" +
-                participant.deaths +
-                "/" +
-                participant.assists
-              }
-              dmg={participant.totalDamageDealt}
-              cs={participant.totalMinionsKilled}
-              item1={participant.item1}
-              item2={participant.item2}
-              item3={participant.item3}
-              item4={participant.item0}
-              item5={participant.item4}
-              item6={participant.item5}
-              item7={participant.item6}
-              team={participant.teamId}
-              index={index}
-              key={participant.summonerName}
-            />
-          );
+      var redTeam = matchdetails.matchJson.participants.map(
+        (participant, index) => {
+          if (participant.teamId === 200) {
+            totalRgold += participant.goldEarned;
+            var redTeam = (
+              <Champscore
+                pseudo={participant.summonerName}
+                invSpell1={participant.summoner1Id}
+                invSpell2={participant.summoner2Id}
+                champ={
+                  "https://ddragon.leagueoflegends.com/cdn/12.18.1/img/champion/" +
+                  participant.championName +
+                  ".png"
+                }
+                level={participant.champLevel}
+                kda={
+                  participant.kills +
+                  "/" +
+                  participant.deaths +
+                  "/" +
+                  participant.assists
+                }
+                dmg={participant.totalDamageDealt}
+                cs={participant.totalMinionsKilled}
+                item1={participant.item1}
+                item2={participant.item2}
+                item3={participant.item3}
+                item4={participant.item0}
+                item5={participant.item4}
+                item6={participant.item5}
+                item7={participant.item6}
+                team={participant.teamId}
+                index={index}
+                key={participant.summonerName}
+              />
+            );
+          }
+          return redTeam;
         }
-        return redTeam;
-      });
-      var totalKill = matchdetails.matchJson.teams[1].objectives.champion.kills + matchdetails.matchJson.teams[0].objectives.champion.kills;
-      var totalB = ((matchdetails.matchJson.teams[0].objectives.champion.kills)/totalKill) * 100;
-      var totalR = ((matchdetails.matchJson.teams[1].objectives.champion.kills)/totalKill) * 100;
+      );
+      var totalKill =
+        matchdetails.matchJson.teams[1].objectives.champion.kills +
+        matchdetails.matchJson.teams[0].objectives.champion.kills;
+      var totalB =
+        (matchdetails.matchJson.teams[0].objectives.champion.kills /
+          totalKill) *
+        100;
+      var totalR =
+        (matchdetails.matchJson.teams[1].objectives.champion.kills /
+          totalKill) *
+        100;
+
+      var totalgoldgame = totalBgold + totalRgold;
+      var totalBgoldgame = (totalBgold / totalgoldgame) * 100;
+      var totalRgoldgame = (totalRgold / totalgoldgame) * 100;
       var html = (
         <div key="1">
           <div className="blueTeam">{blueTeam}</div>
@@ -133,8 +144,14 @@ const ScoreBoard = () => {
             <div className="totBars flex-column">
               <div className="totKills">
                 <div className="killBar">
-                  <div className="blueKills" style={{ width: totalB + "%" }}></div>
-                  <div className="redKills" style={{ width: totalR + "%" }}></div>
+                  <div
+                    className="blueKills"
+                    style={{ width: totalB + "%" }}
+                  ></div>
+                  <div
+                    className="redKills"
+                    style={{ width: totalR + "%" }}
+                  ></div>
                 </div>
                 <ul className="statKills flex">
                   <li className="bKill">
@@ -148,13 +165,19 @@ const ScoreBoard = () => {
               </div>
               <div className="totGolds">
                 <div className="goldBar">
-                  <div className="blueGolds" style={{ width: 60 + "%" }}></div>
-                  <div className="redGolds" style={{ width: 40 + "%" }}></div>
+                  <div
+                    className="blueGolds"
+                    style={{ width: totalBgoldgame + "%" }}
+                  ></div>
+                  <div
+                    className="redGolds"
+                    style={{ width: totalRgoldgame + "%" }}
+                  ></div>
                 </div>
                 <ul className="statGolds flex">
-                  <li className="bGold">{6000}</li>
+                  <li className="bGold">{totalBgold}</li>
                   <li className="totGold">Total Gold</li>
-                  <li className="rGold">{4000}</li>
+                  <li className="rGold">{totalRgold}</li>
                 </ul>
               </div>
             </div>
