@@ -2,23 +2,18 @@ import "./index.css";
 import React from "react";
 import { useParams } from "react-router-dom";
 import Champscore from "../champscore";
+import axios from 'axios';
+
 
 const ScoreBoard = () => {
   const { number } = useParams();
   const { puuid } = useParams();
   const [match, setmatch] = React.useState();
 
-  const axios = require("axios");
   async function getmatch(puuid) {
     try {
       const response = await axios.get(
-        process.env.REACT_APP_API_URL + "match/" + number + "/account/" + puuid,
-        {
-          headers: {
-            "Access-Control-Allow-Origin": "*",
-            "Access-Control-Allow-Headers": "*",
-          },
-        }
+        process.env.REACT_APP_API_URL + "match/" + number + "/account/" + puuid
       );
       setmatch(response.data);
     } catch (error) {
@@ -28,11 +23,10 @@ const ScoreBoard = () => {
 
   React.useEffect(() => {
     getmatch(puuid);
-  });
+  }, []);
   if (match) {
     var listing = match.map((matchdetails) => {
-      var blueTeam = matchdetails.matchJson.participants.map((participant) => {
-        console.log(participant);
+      var blueTeam = matchdetails.matchJson.participants.map((participant,index) => {
         if (participant.teamId === 100) {
           var blueTeam = (
             <Champscore
@@ -66,13 +60,15 @@ const ScoreBoard = () => {
               item6={participant.item5}
               item7={participant.item6}
               team={participant.teamId}
+              index={index}
+              key={participant.summonerName}
             />
           );
         }
         return blueTeam;
       });
 
-      var redTeam = matchdetails.matchJson.participants.map((participant) => {
+      var redTeam = matchdetails.matchJson.participants.map((participant,index) => {
         if (participant.teamId === 200) {
           var redTeam = (
             <Champscore
@@ -106,13 +102,15 @@ const ScoreBoard = () => {
               item6={participant.item5}
               item7={participant.item6}
               team={participant.teamId}
+              index={index}
+              key={participant.summonerName}
             />
           );
         }
         return redTeam;
       });
       var html = (
-        <>
+        <div key="1">
           <div className="blueTeam">{blueTeam}</div>
           <div className="middleInfo">
             <div className="blueObj flex">
@@ -173,7 +171,7 @@ const ScoreBoard = () => {
             </div>
           </div>
           <div className="redTeam">{redTeam}</div>
-        </>
+        </div>
       );
       return html;
     });

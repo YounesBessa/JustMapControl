@@ -18,6 +18,7 @@ const Champscore = ({
   item6,
   item7,
   team,
+  index
 }) => {
   let style;
 
@@ -97,7 +98,7 @@ const Champscore = ({
   var invspell2 = "https://ddragon.leagueoflegends.com/cdn/12.18.1/img/spell/"+spell[invSpell2]+".png";
 
   return (
-    <div className="flex container-score" style={style}>
+    <div className="flex container-score" style={style} key={index}>
       <div className="relat">
         <img className="imgChamp" src={champ} alt={champ}></img>
         <p className="level">{level}</p>

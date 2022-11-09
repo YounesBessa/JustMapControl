@@ -9,27 +9,18 @@ const Searchbar: React.FC = () => {
   const [pseudo, setPseudo] = useState("");
 
   async function getAccount(region: string, pseudo: string) {
-    try {
+    if (region !== "" && pseudo !== "") {
       const response = await axios.get(
         process.env.REACT_APP_API_URL +
           "account/" +
           pseudo +
           "/region/" +
-          region,
-        {
-          headers: {
-            "Access-Control-Allow-Origin": "*",
-            "Access-Control-Allow-Headers": "*",
-            "Access-Control-Allow-Credentials": "true",
-          },
-        }
+          region
       );
       setPuuid(response.data[0].puuid);
-      return response.data;
-    } catch (error) {
-      return [];
     }
   }
+
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     // 👇️ prevent page refresh
     event.preventDefault();
@@ -41,7 +32,7 @@ const Searchbar: React.FC = () => {
 
   React.useEffect(() => {
     getAccount(region, pseudo);
-  });
+  }, [region, pseudo, puuid]);
   return (
     <div>
       <div className="SeachbarWrap">
@@ -72,7 +63,7 @@ const Searchbar: React.FC = () => {
           </div>
         </form>
       </div>
-      <ResumeMatch puuid={puuid} />
+      {puuid !== "" && <ResumeMatch puuid={puuid} key={puuid}/>}
     </div>
   );
 };

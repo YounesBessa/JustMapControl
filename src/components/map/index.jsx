@@ -26,11 +26,11 @@ const Map = () => {
 
     React.useEffect(() => {
         getmatch(number);
-    }, []);
+    }, [number]);
 
         if (matchtimeline !== "vide") {
                var match = matchtimeline.matchJson.frames.map((frame) =>
-                    frame.events.map((event) => {
+                    frame.events.map((event,index) => {
                         if (event.type === "CHAMPION_KILL") {
                             const x = event.position.x;
                             const y = event.position.y;
@@ -40,7 +40,7 @@ const Map = () => {
                             } else {
                                 team = "200";
                             }
-                            return <Beacon x={x} y={y} team={team} />;
+                            return <Beacon x={x} y={y} team={team} key={index} />;
                         }
                     }
                     )
