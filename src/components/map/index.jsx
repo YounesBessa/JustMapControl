@@ -20,7 +20,6 @@ const Map = () => {
                 },
             }
         ).then((res) => {
-            console.log(res);
             setmatch(res.data);
         });
     }
@@ -41,7 +40,6 @@ const Map = () => {
                             } else {
                                 team = "200";
                             }
-                            console.log(event);
                             return <Beacon x={x} y={y} team={team} />;
                         }
                     }
