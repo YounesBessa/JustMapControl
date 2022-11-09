@@ -109,6 +109,9 @@ const ScoreBoard = () => {
         }
         return redTeam;
       });
+      var totalKill = matchdetails.matchJson.teams[1].objectives.champion.kills + matchdetails.matchJson.teams[0].objectives.champion.kills;
+      var totalB = ((matchdetails.matchJson.teams[0].objectives.champion.kills)/totalKill) * 100;
+      var totalR = ((matchdetails.matchJson.teams[1].objectives.champion.kills)/totalKill) * 100;
       var html = (
         <div key="1">
           <div className="blueTeam">{blueTeam}</div>
@@ -130,8 +133,8 @@ const ScoreBoard = () => {
             <div className="totBars flex-column">
               <div className="totKills">
                 <div className="killBar">
-                  <div className="blueKills" style={{ width: 60 + "%" }}></div>
-                  <div className="redKills" style={{ width: 40 + "%" }}></div>
+                  <div className="blueKills" style={{ width: totalB + "%" }}></div>
+                  <div className="redKills" style={{ width: totalR + "%" }}></div>
                 </div>
                 <ul className="statKills flex">
                   <li className="bKill">
