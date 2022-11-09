@@ -1,16 +1,14 @@
 import "./ResumeMatch.css";
 import React from "react";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
-
-const ResumeMatch = ({puuid}) => {
+const ResumeMatch = ({ puuid }) => {
   const [matchlist, setmatchlist] = React.useState();
   const axios = require("axios");
   async function getAllmatchs(puuid) {
     try {
       const response = await axios.get(
-        process.env.REACT_APP_API_URL +
-          "matchs/" +puuid,
+        process.env.REACT_APP_API_URL + "matchs/" + puuid,
         {
           headers: {
             "Access-Control-Allow-Origin": "*",
@@ -46,23 +44,27 @@ const ResumeMatch = ({puuid}) => {
         winclass = "flex container";
       }
       var html = (
-        <Link to={"/match/" + match.idMatch + "/" + puuid} key={match.idMatch}>
         <div className={winclass}>
-          <div className="flex dark-container">
-            {win}
-            <div className="flex info">
-              <p>{(match.timePlayed / 60).toFixed(2).replace(".", ":")}</p>
-              <p>
-                {match.kills}/{match.deaths}/{match.assists}
-              </p>
+          <Link
+            to={"/match/" + match.idMatch + "/" + puuid}
+            key={match.idMatch}
+            className={"flex container-champ"}
+          >
+            <div className="flex dark-container">
+              {win}
+              <div className="flex info">
+                <p>{(match.timePlayed / 60).toFixed(2).replace(".", ":")}</p>
+                <p>
+                  {match.kills}/{match.deaths}/{match.assists}
+                </p>
+              </div>
             </div>
-          </div>
-          <div className="flex image">
-            <img src={url} alt="icon du champion" />
-            <p className="fly">{match.champLevel}</p>
-          </div>
+            <div className="flex image">
+              <img src={url} alt="icon du champion" />
+              <p className="fly">{match.champLevel}</p>
+            </div>
+          </Link>
         </div>
-        </Link>
       );
       return html;
     });

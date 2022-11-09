@@ -40,41 +40,61 @@ const Champscore = ({
     let item6Src = EmptyItem;
     let item7Src = EmptyItem;
 
-  if(item1 == 0){
+  if(item1 === 0){
     item1Src = EmptyItem;
   } else {
     item1Src = "http://ddragon.leagueoflegends.com/cdn/12.20.1/img/item/" + item1 + ".png";
   }
-  if(item2 == 0){
+  if(item2 === 0){
     item2Src = EmptyItem;
   } else {
     item2Src = "http://ddragon.leagueoflegends.com/cdn/12.20.1/img/item/" + item2 + ".png";
   }
-  if(item3 == 0){
+  if(item3 === 0){
     item3Src = EmptyItem;
   } else {
     item3Src = "http://ddragon.leagueoflegends.com/cdn/12.20.1/img/item/" + item3 + ".png";
   }
-  if(item4 == 0){
+  if(item4 === 0){
     item4Src = EmptyItem;
   } else {
     item4Src = "http://ddragon.leagueoflegends.com/cdn/12.20.1/img/item/" + item4 + ".png";
   }
-  if(item5 == 0){
+  if(item5 === 0){
     item5Src = EmptyItem;
   } else {
     item5Src = "http://ddragon.leagueoflegends.com/cdn/12.20.1/img/item/" + item5 + ".png";
   }
-  if(item6 == 0){
+  if(item6 === 0){
     item6Src = EmptyItem;
   } else {
     item6Src = "http://ddragon.leagueoflegends.com/cdn/12.20.1/img/item/" + item6 + ".png";
   }
-  if(item7 == 0){
+  if(item7 === 0){
     item7Src = EmptyItem;
   } else {
     item7Src = "http://ddragon.leagueoflegends.com/cdn/12.20.1/img/item/" + item7 + ".png";
   }
+
+  const spell = {
+    21: "SummonerBarrier",
+    1: "SummonerBoost",
+    14: "SummonerDot",
+    3: "SummonerExhaust",
+    4: "SummonerFlash",
+    6: "SummonerHaste",
+    7: "SummonerHeal",
+    13: "SummonerMana",
+    30: "SummonerPoroRecall",
+    31: "SummonerPoroThrow",
+    11: "SummonerSmite",
+    39: "SummonerSnowURFSnowball_Mark",
+    32: "SummonerSnowball",
+    12: "SummonerTeleport",
+  };
+
+  var invspell1 = "https://ddragon.leagueoflegends.com/cdn/12.18.1/img/spell/"+spell[invSpell1]+".png";
+  var invspell2 = "https://ddragon.leagueoflegends.com/cdn/12.18.1/img/spell/"+spell[invSpell2]+".png";
 
   return (
     <div className="flex container-score" style={style}>
@@ -83,8 +103,8 @@ const Champscore = ({
         <p className="level">{level}</p>
       </div>
       <div className="flex-column">
-        <img className="imgSpell" src={invSpell1} alt={invSpell1}></img>
-        <img className="imgSpell" src={invSpell2} alt={invSpell2}></img>
+        <img className="imgSpell" src={invspell1} alt="sort1"></img>
+        <img className="imgSpell" src={invspell2} alt="sort2"></img>
       </div>
       <div className="flex-column gap">
         <p>{pseudo}</p>

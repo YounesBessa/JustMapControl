@@ -32,15 +32,16 @@ const ScoreBoard = () => {
   if (match) {
     var listing = match.map((matchdetails) => {
       var blueTeam = matchdetails.matchJson.participants.map((participant) => {
+        console.log(participant);
         if (participant.teamId === 100) {
           var blueTeam = (
             <Champscore
               pseudo={participant.summonerName}
               invSpell1={
-                "https://ddragon.leagueoflegends.com/cdn/12.18.1/img/spell/SummonerFlash.png"
+                participant.summoner1Id
               }
               invSpell2={
-                "https://ddragon.leagueoflegends.com/cdn/12.18.1/img/spell/SummonerBarrier.png"
+                participant.summoner2Id
               }
               champ={
                 "https://ddragon.leagueoflegends.com/cdn/12.18.1/img/champion/" +
@@ -77,10 +78,10 @@ const ScoreBoard = () => {
             <Champscore
               pseudo={participant.summonerName}
               invSpell1={
-                "https://ddragon.leagueoflegends.com/cdn/12.18.1/img/spell/SummonerFlash.png"
+                participant.summoner1Id
               }
               invSpell2={
-                "https://ddragon.leagueoflegends.com/cdn/12.18.1/img/spell/SummonerBarrier.png"
+                participant.summoner2Id
               }
               champ={
                 "https://ddragon.leagueoflegends.com/cdn/12.18.1/img/champion/" +
