@@ -2,6 +2,7 @@ import './index.css';
 import React from "react";
 import { useParams } from "react-router-dom";
 import Beacon from '../beacon';
+import Event from '../event';
 import axios from 'axios';
 
 const Map = () => {
@@ -9,6 +10,7 @@ const Map = () => {
 
     const [matchtimeline, setmatch] = React.useState("vide");
     const [info, setInfo] = React.useState('');
+    const [listInfo, setListInfo] = React.useState('');
 
     const getmatch = (idmatch) => {
 
@@ -33,7 +35,6 @@ const Map = () => {
    
     function handleChange(event) {
         const frames = event.target.value;
-        console.log(frames);
         if(frames == maxFrames){
             var match = matchtimeline.matchJson.frames.map((frame) =>
                 frame.events.map((event,index) => {
@@ -52,6 +53,22 @@ const Map = () => {
                 )
             );
             setInfo(match);
+
+            var listing = matchtimeline.matchJson.frames.map((frame) =>
+                frame.events.map((event,index) => {
+                    if (event.type === "CHAMPION_KILL") {
+                        let team = "";
+                        if (event.killerId <= 5) {
+                            team = "100";
+                        } else {
+                            team = "200";
+                        }
+                        return <Event killer={event.killerId} victim={event.victimId} team={team} key={index} />;
+                    }
+                }
+                )
+            );
+            setListInfo(listing);
             
         } else {
             var match = matchtimeline.matchJson.frames[frames].events.map((event, index) =>{
@@ -67,28 +84,38 @@ const Map = () => {
                     return <Beacon x={x} y={y} team={team} key={index} />;
                 }
             });
-            console.log(match);
             setInfo(match);
+
+            var listing = matchtimeline.matchJson.frames[frames].events.map((event, index) =>{
+                if (event.type === "CHAMPION_KILL") {
+                    let team = "";
+                    if (event.killerId <= 5) {
+                        team = "100";
+                    } else {
+                        team = "200";
+                    }
+                    return <Event killer={event.killerId} victim={event.victimId} team={team} key={index} />;
+                }
+            });
+            setListInfo(listing);
         }
     }
 
     if (matchtimeline !== "vide") {
-        
-    
-
-    matchtimeline.matchJson.frames.map((frame) => {
-        maxFrames++;
-    })
+        matchtimeline.matchJson.frames.map((frame) => {
+            maxFrames++;
+        })
     }
-        
-    
 
     return(
         <div className='contain'>
             <div className="Map">
                 {info}
             </div>
-            <label for="frames">Frames (0 et {maxFrames})</label>
+            <div>
+                {listInfo}
+            </div>
+            <label>Frames (0 et {maxFrames})</label>
             <input type="range" onChange={handleChange} id="frames" name="frames" min="0" max={maxFrames}></input>
         </div>
     )
