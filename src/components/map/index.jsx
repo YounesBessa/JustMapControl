@@ -35,7 +35,7 @@ const Map = () => {
    
     function handleChange(event) {
         const frames = event.target.value;
-        if(frames == maxFrames){
+        if(frames === maxFrames){
             var match = matchtimeline.matchJson.frames.map((frame) =>
                 frame.events.map((event,index) => {
                     if (event.type === "CHAMPION_KILL") {
@@ -64,6 +64,20 @@ const Map = () => {
                             team = "200";
                         }
                         return <Event killer={event.killerId} victim={event.victimId} team={team} key={index} />;
+                    }
+                    else if(event.type === "ELITE_MONSTER_KILL") {
+                        let team = "";
+                        let monster = event.monsterType;
+                        
+                        if(monster === "DRAGON"){
+                            monster = event.monsterSubType;
+                        }
+                        if (event.killerId <= 5) {
+                            team = "100";
+                        } else {
+                            team = "200";
+                        }
+                        return <Event killer={event.killerId} monster={monster} team={team} key={index} />;
                     }
                 }
                 )
@@ -95,6 +109,20 @@ const Map = () => {
                         team = "200";
                     }
                     return <Event killer={event.killerId} victim={event.victimId} team={team} key={index} />;
+                }
+                else if(event.type === "ELITE_MONSTER_KILL") {
+                    let team = "";
+                    let monster = event.monsterType;
+                    
+                    if(monster === "DRAGON"){
+                        monster = event.monsterSubType;
+                    }
+                    if (event.killerId <= 5) {
+                        team = "100";
+                    } else {
+                        team = "200";
+                    }
+                    return <Event killer={event.killerId} monster={monster} team={team} key={index} />;
                 }
             });
             setListInfo(listing);
