@@ -161,6 +161,15 @@ const ScoreBoard = () => {
           </div>
           <div className="middleInfo">
             <div className="totBars flex-column">
+            <ul className="statKills flex">
+                  <li className="bKill" style={{color: '#5383e8'}}>
+                    {matchdetails.matchJson.teams[0].objectives.champion.kills}
+                  </li>
+                  <li className="totKill">Total Kill</li>
+                  <li className="rKill" style={{color: '#f12b15'}}>
+                    {matchdetails.matchJson.teams[1].objectives.champion.kills}
+                  </li>
+                </ul>
               <div className="totKills">
                 <div className="killBar">
                   <div
@@ -172,16 +181,12 @@ const ScoreBoard = () => {
                     style={{ width: totalR + "%" }}
                   ></div>
                 </div>
-                <ul className="statKills flex">
-                  <li className="bKill">
-                    {matchdetails.matchJson.teams[0].objectives.champion.kills}
-                  </li>
-                  <li className="totKill">Total Kill</li>
-                  <li className="rKill">
-                    {matchdetails.matchJson.teams[1].objectives.champion.kills}
-                  </li>
-                </ul>
               </div>
+              <ul className="statGolds flex">
+                  <li className="bGold" style={{color: '#5383e8'}}>{totalBgold}</li>
+                  <li className="totGold">Total Gold</li>
+                  <li className="rGold" style={{color: '#f12b15'}}>{totalRgold}</li>
+                </ul>
               <div className="totGolds">
                 <div className="goldBar">
                   <div
@@ -193,11 +198,6 @@ const ScoreBoard = () => {
                     style={{ width: totalRgoldgame + "%" }}
                   ></div>
                 </div>
-                <ul className="statGolds flex">
-                  <li className="bGold">{totalBgold}</li>
-                  <li className="totGold">Total Gold</li>
-                  <li className="rGold">{totalRgold}</li>
-                </ul>
               </div>
             </div>
           </div>

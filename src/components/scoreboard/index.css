@@ -38,17 +38,17 @@
 }
 
 .totGolds{
-    margin-top: 3%;
+    /* margin-top: 3%; */
 }
 .statGolds{
     justify-content: space-around;
-    position: relative;
+    /* position: relative; */
 }
 .goldBar{
     display: flex;
 }
 .statGolds li{
-    position: absolute;
+    /* position: absolute; */
 }
 .rGold{
     top: -22px;
@@ -74,13 +74,13 @@
 
 .statKills{
     justify-content: space-around;
-    position: relative;
+    /* position: relative; */
 }
 .killBar{
     display: flex;
 }
-.statKills li{
-    position: absolute;
+.totKills{
+    margin-bottom: 3%;
 }
 .rKill{
     top: -22px;
