@@ -13,7 +13,6 @@ const Header: React.FC = () => {
           </div>
         </div>
         <h1 className="TitleText">JustMapControl</h1>
-        <h1 className="TitleText2">LoL Stats</h1>
       </div>
     </Link>
   );

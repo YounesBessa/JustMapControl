@@ -64,7 +64,7 @@ const Searchbar: React.FC = () => {
         </form>
       </div>
       {puuid !== "" && <ResumeMatch puuid={puuid} key={puuid}/>}
-      {puuid === "" && <img src="/images/search.png" alt="resultat de recherche"/>}
+      {puuid === "" && <img className="apercu" src="/images/search.png" alt="resultat de recherche"/>}
     </div>
   );
 };

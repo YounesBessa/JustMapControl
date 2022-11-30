@@ -3,7 +3,7 @@ div.HeaderContainer {
   display: flex;
   background-image: url("../../images/header.png");
   background-size: cover;
-  background-position: center;
+  background-position: top;
   background-repeat: no-repeat;
   height: 200px;
 }
@@ -37,18 +37,9 @@ h1.Title {
 }
 h1.TitleText{
   position: absolute;
-  top: 45%;
-  left: 25%;
+  top: 2%;
+  left: 50%;
   transform: translate(-50%, -50%);
-  font-size: 30px;
-  font-weight: bold;
-  color: white;
-}
-h1.TitleText2{
-  position: absolute;
-  top: 50%;
-  left: 75%;
-  transform: translate(-75%, -75%);
   font-size: 30px;
   font-weight: bold;
   color: white;

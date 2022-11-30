@@ -1,4 +1,4 @@
-div.SeachbarWrap{
+div.SeachbarWrap {
   width: 40%;
   margin: 0 auto;
   margin-top: 10px;
@@ -6,53 +6,54 @@ div.SeachbarWrap{
   justify-content: center;
   align-items: center;
 }
-select.region-select{
-  background-color: #2D2D2D;
+select.region-select {
+  background-color: #2d2d2d;
   color: #fff;
   border-radius: 5px 0 0 5px;
   border: none;
 }
-div.Searchbar{
+div.Searchbar {
   width: 100%;
   position: relative;
   display: flex;
 }
-input.SearchTerm{
+input.SearchTerm {
   width: 100%;
   min-width: 100px;
   border: none;
   padding: 5px;
   height: 20px;
   outline: none;
-  color: #FFF;
-  background-color: #2D2D2D;
-  border-top: 1px solid #2D2D2D;
-  border-bottom: 1px solid #2D2D2D;
+  color: #fff;
+  background-color: #2d2d2d;
+  border-top: 1px solid #2d2d2d;
+  border-bottom: 1px solid #2d2d2d;
   text-align: center;
 }
-button.SearchButton{
+button.SearchButton {
   width: 40px;
   height: 32px;
-  border:none;
-  background: #2D2D2D;
+  border: none;
+  background: #2d2d2d;
   text-align: center;
   color: #fff;
   border-radius: 0 5px 5px 0;
   cursor: pointer;
   font-size: 20px;
-  border: 1px solid #2D2D2D;
+  border: 1px solid #2d2d2d;
 }
-span.ButtonText{
+span.ButtonText {
   color: white;
-  font-size: 20px;  
+  font-size: 20px;
 }
 
-img{
+img.apercu {
+  width: 50%;
   display: block;
   margin: 0 auto;
+  border-radius: 30px;
 }
 
 /* DESKTOP */
 @media only screen and (min-width: 600px) {
-
 }
