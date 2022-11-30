@@ -4,8 +4,8 @@
     flex-direction: row;
     justify-content: center;
 }
-.blueTeam.flex container-score{
-    padding-left: 30px;
+.blueTeam{
+    border-right: 3px solid black;
 }
 }
 
