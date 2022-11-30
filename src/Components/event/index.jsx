@@ -86,9 +86,9 @@ const Event = ({killer, victim, team, monster}) => {
         
         return(
             <div className="Event" style={style}>
-                <img src={killerPic} alt={killerName}/>
-                <img src={kill} alt="killed"/>
-                <img src={victimPic} alt={victimName}/>
+                <img className="eventpic" src={killerPic} alt={killerName}/>
+                <img className="eventpic" src={kill} alt="killed"/>
+                <img className="eventpic" src={victimPic} alt={victimName}/>
             </div>
         )
     }

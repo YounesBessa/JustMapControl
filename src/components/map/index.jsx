@@ -136,11 +136,11 @@ const Map = () => {
     }
 
     return(
-        <div className='contain'>
+        <div className="contain">
             <div className="Map">
                 {info}
             </div>
-            <div>
+            <div className="eventcontainer">
                 {listInfo}
             </div>
             <label>Frames (0 et {maxFrames})</label>
