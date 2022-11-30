@@ -125,22 +125,11 @@ const ScoreBoard = () => {
       var totalRgoldgame = (totalRgold / totalgoldgame) * 100;
       var html = (
         <div key="1">
-          <div className="blueTeam">{blueTeam}</div>
+          <div className="teams">
+            <div className="blueTeam">{blueTeam}</div>
+            <div className="redTeam">{redTeam}</div>
+          </div>
           <div className="middleInfo">
-            <div className="blueObj flex">
-              <div className="flex-column obj">
-                <div className="bNashImg"></div>
-                <p>{matchdetails.matchJson.teams[0].objectives.baron.kills}</p>
-              </div>
-              <div className="flex-column obj">
-                <div className="bDragImg"></div>
-                <p>{matchdetails.matchJson.teams[0].objectives.dragon.kills}</p>
-              </div>
-              <div className="flex-column obj">
-                <div className="bTowerImg"></div>
-                <p>{matchdetails.matchJson.teams[0].objectives.tower.kills}</p>
-              </div>
-            </div>
             <div className="totBars flex-column">
               <div className="totKills">
                 <div className="killBar">
@@ -181,6 +170,20 @@ const ScoreBoard = () => {
                 </ul>
               </div>
             </div>
+            <div className="blueObj flex">
+              <div className="flex-column obj">
+                <div className="bNashImg"></div>
+                <p>{matchdetails.matchJson.teams[0].objectives.baron.kills}</p>
+              </div>
+              <div className="flex-column obj">
+                <div className="bDragImg"></div>
+                <p>{matchdetails.matchJson.teams[0].objectives.dragon.kills}</p>
+              </div>
+              <div className="flex-column obj">
+                <div className="bTowerImg"></div>
+                <p>{matchdetails.matchJson.teams[0].objectives.tower.kills}</p>
+              </div>
+            </div>
             <div className="redObj flex">
               <div className="flex-column obj">
                 <div className="rNashImg"></div>
@@ -188,15 +191,14 @@ const ScoreBoard = () => {
               </div>
               <div className="flex-column obj">
                 <div className="rDragImg"></div>
-                <p>{matchdetails.matchJson.teams[1].objectives.baron.kills}</p>
+                <p>{matchdetails.matchJson.teams[1].objectives.dragon.kills}</p>
               </div>
               <div className="flex-column obj">
                 <div className="rTowerImg"></div>
-                <p>{matchdetails.matchJson.teams[1].objectives.baron.kills}</p>
+                <p>{matchdetails.matchJson.teams[1].objectives.tower.kills}</p>
               </div>
             </div>
           </div>
-          <div className="redTeam">{redTeam}</div>
         </div>
       );
       return html;

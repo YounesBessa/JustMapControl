@@ -111,14 +111,11 @@ const Champscore = ({
       </div>
       
       <div className="flex-column">
-        {/* <img className="imgSpell" src={invspell1} alt="sort1"></img>
-        <img className="imgSpell" src={invspell2} alt="sort2"></img> */}
       </div>
       <div className="flex-column gap">
       </div>
       <div className="flex-column gap">
       <div style={{ display: "flex", flexDirection: "column" }}>
-        {/* <p>Dégats</p> */}
         <div className="damage">Dégats: {dmg}</div>
       </div>
       <p>Sbires tués: {cs}</p>

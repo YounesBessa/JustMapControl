@@ -1,3 +1,14 @@
+@media only screen and (min-width: 600px) {
+.teams{
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.blueTeam.flex container-score{
+    padding-left: 30px;
+}
+}
+
 .flex-column{
     display: flex;
     flex-direction: column;

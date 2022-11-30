@@ -39,7 +39,3 @@
     border-width: 1px;
     border-color: black;
 }
-/* make the flex items div's width fit the page */
-.flex items{
-    max-width: inherit;
-}
