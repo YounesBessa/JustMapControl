@@ -11,9 +11,9 @@ const HomePage: React.FunctionComponent<IHomePageProps> = (props) => {
       <div>
         <Header/>
       <Searchbar/>
-      <p className="hello">{"Greetings, Summoner "}</p>
+      <p className="hello">{"Salutations, Invocateur "}</p>
       <img src={Teemo} className="teemo" alt="Teemo"/>
-      <p className="welcome">Welcome to JMC !</p>
+      <p className="welcome">Bienvenue sur JMC !</p>
         <Footer/>
         </div>
     );
