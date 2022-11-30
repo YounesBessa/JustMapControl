@@ -129,6 +129,36 @@ const ScoreBoard = () => {
             <div className="blueTeam">{blueTeam}</div>
             <div className="redTeam">{redTeam}</div>
           </div>
+          <div className="teamsObj">
+            <div className="blueObj flex">
+              <div className="flex-column obj">
+                <div className="bNashImg"></div>
+                <p>{matchdetails.matchJson.teams[0].objectives.baron.kills}</p>
+              </div>
+              <div className="flex-column obj">
+                <div className="bDragImg"></div>
+                <p>{matchdetails.matchJson.teams[0].objectives.dragon.kills}</p>
+              </div>
+              <div className="flex-column obj">
+                <div className="bTowerImg"></div>
+                <p>{matchdetails.matchJson.teams[0].objectives.tower.kills}</p>
+              </div>
+            </div>
+            <div className="redObj flex">
+              <div className="flex-column obj">
+                <div className="rNashImg"></div>
+                <p>{matchdetails.matchJson.teams[1].objectives.baron.kills}</p>
+              </div>
+              <div className="flex-column obj">
+                <div className="rDragImg"></div>
+                <p>{matchdetails.matchJson.teams[1].objectives.dragon.kills}</p>
+              </div>
+              <div className="flex-column obj">
+                <div className="rTowerImg"></div>
+                <p>{matchdetails.matchJson.teams[1].objectives.tower.kills}</p>
+              </div>
+            </div>
+          </div>
           <div className="middleInfo">
             <div className="totBars flex-column">
               <div className="totKills">
@@ -168,34 +198,6 @@ const ScoreBoard = () => {
                   <li className="totGold">Total Gold</li>
                   <li className="rGold">{totalRgold}</li>
                 </ul>
-              </div>
-            </div>
-            <div className="blueObj flex">
-              <div className="flex-column obj">
-                <div className="bNashImg"></div>
-                <p>{matchdetails.matchJson.teams[0].objectives.baron.kills}</p>
-              </div>
-              <div className="flex-column obj">
-                <div className="bDragImg"></div>
-                <p>{matchdetails.matchJson.teams[0].objectives.dragon.kills}</p>
-              </div>
-              <div className="flex-column obj">
-                <div className="bTowerImg"></div>
-                <p>{matchdetails.matchJson.teams[0].objectives.tower.kills}</p>
-              </div>
-            </div>
-            <div className="redObj flex">
-              <div className="flex-column obj">
-                <div className="rNashImg"></div>
-                <p>{matchdetails.matchJson.teams[1].objectives.baron.kills}</p>
-              </div>
-              <div className="flex-column obj">
-                <div className="rDragImg"></div>
-                <p>{matchdetails.matchJson.teams[1].objectives.dragon.kills}</p>
-              </div>
-              <div className="flex-column obj">
-                <div className="rTowerImg"></div>
-                <p>{matchdetails.matchJson.teams[1].objectives.tower.kills}</p>
               </div>
             </div>
           </div>

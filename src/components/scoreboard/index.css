@@ -17,9 +17,11 @@
     display: flex;
 }
 .middleInfo{
+    color: #FFF;
+}
+.teamsObj{
     margin-top: 4%;
     margin-bottom: 4%;
-    color: #FFF;
 }
 .blueObj{
     justify-content: space-around;
