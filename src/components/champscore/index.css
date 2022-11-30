@@ -31,7 +31,15 @@
     width: 25px;
     height: 25px;
 }
+.imgItem{
+    width: 40px;
+    height: 40px;
+}
 .damage{
     border-width: 1px;
     border-color: black;
+}
+/* make the flex items div's width fit the page */
+.flex items{
+    max-width: inherit;
 }

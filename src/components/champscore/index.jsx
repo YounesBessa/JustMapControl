@@ -103,19 +103,26 @@ const Champscore = ({
         <img className="imgChamp" src={champ} alt={champ}></img>
         <p className="level">{level}</p>
       </div>
-      <div className="flex-column">
-        <img className="imgSpell" src={invspell1} alt="sort1"></img>
+      <div style={{ display: "flex", flexDirection: "column" }}>
+      <p>{pseudo}</p>
+      <img className="imgSpell" src={invspell1} alt="sort1"></img>
         <img className="imgSpell" src={invspell2} alt="sort2"></img>
+      <p>{kda}</p>
+      </div>
+      
+      <div className="flex-column">
+        {/* <img className="imgSpell" src={invspell1} alt="sort1"></img>
+        <img className="imgSpell" src={invspell2} alt="sort2"></img> */}
       </div>
       <div className="flex-column gap">
-        <p>{pseudo}</p>
-        <p>{kda}</p>
       </div>
       <div className="flex-column gap">
-        <p>Dégats</p>
-        <div className="damage">{dmg}</div>
+      <div style={{ display: "flex", flexDirection: "column" }}>
+        {/* <p>Dégats</p> */}
+        <div className="damage">Dégats: {dmg}</div>
       </div>
-      <p>{cs}</p>
+      <p>Sbires tués: {cs}</p>
+      </div>
       <div className="flex items">
         <div className="flex-column">
           <img
