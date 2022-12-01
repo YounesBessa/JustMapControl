@@ -1,6 +1,6 @@
 /* MOBILE */
 
-.lastGame{
+.lastGame {
   width: 100%;
 }
 
@@ -42,7 +42,7 @@
 .dark-container {
   background: rgba(0, 0, 0, 0.5);
   width: 100%;
-  margin : 0 2%;
+  margin: 0 2%;
   flex-direction: column;
 }
 .dark-container p {
@@ -84,5 +84,12 @@
   .fly {
     top: 45%;
     right: 75%;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .dark-container {
+    padding: 3px;
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
   }
 }
