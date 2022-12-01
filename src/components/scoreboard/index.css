@@ -47,6 +47,8 @@
 }
 .goldBar{
     display: flex;
+    margin: 0 auto;
+    width: 80%;
 }
 .statGolds li{
     /* position: absolute; */
@@ -79,6 +81,8 @@
 }
 .killBar{
     display: flex;
+    margin: 0 auto;
+    width: 80%;
 }
 .totKills{
     margin-bottom: 3%;
