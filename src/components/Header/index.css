@@ -52,9 +52,9 @@ h2.Subtitle {
 
 /* DESKTOP */
 @media only screen and (max-width: 1024px) {
-  h1.Title {
-    display: none;
-  }
+ div.ScuttlerContainer{
+  flex-direction: column;
+ }
   h1.TitleText {
     display: none;
   }
