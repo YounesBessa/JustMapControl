@@ -13,6 +13,7 @@ const Map = () => {
     const [listInfo, setListInfo] = React.useState('');
     const [framevisual,setframe] = React.useState(0);
 
+
     const getmatch = (idmatch) => {
 
         axios.get(
@@ -97,7 +98,7 @@ const Map = () => {
                     } else {
                         team = "200";
                     }
-                    return <Beacon x={x} y={y} team={team} key={index} />;
+                    return <Beacon x={x} y={y} team={team} hov={index} key={index} />;
                 }
             });
             setInfo(match);
@@ -110,7 +111,7 @@ const Map = () => {
                     } else {
                         team = "200";
                     }
-                    return <Event killer={event.killerId} victim={event.victimId} team={team} key={index} />;
+                    return <Event killer={event.killerId} victim={event.victimId} team={team} hov={index} key={index} />;
                 }
                 else if(event.type === "ELITE_MONSTER_KILL") {
                     let team = "";
