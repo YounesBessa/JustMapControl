@@ -79,7 +79,23 @@
 @media only screen and (min-width: 600px) {
     .container-score {
         padding: 3% 10% 3% 8%;
-        border-radius: 0 10px 10px 0;
+        /* border-radius: 0 10px 10px 0; */
+    }
+
+    .blueTeam>.container-score:first-child {
+        border-radius: 10px 0 0 0;
+    }
+
+    .redTeam>.container-score:first-child {
+        border-radius: 0 10px 0 0;
+    }
+
+    .blueTeam>.container-score:last-child {
+        border-radius: 0 0 0 10px;
+    }
+
+    .redTeam>.container-score:last-child {
+        border-radius: 0 0 10px 0;
     }
 
     .damageandcs {
