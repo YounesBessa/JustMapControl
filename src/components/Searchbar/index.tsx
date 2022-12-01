@@ -34,7 +34,7 @@ const Searchbar: React.FC = () => {
     getAccount(region, pseudo);
   }, [region, pseudo, puuid]);
   return (
-    <div>
+    <div className="wrapper">
       <div className="SeachbarWrap">
         <form onSubmit={handleSubmit}>
           <div className="Searchbar">

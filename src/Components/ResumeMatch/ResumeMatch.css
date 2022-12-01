@@ -1,5 +1,9 @@
 /* MOBILE */
 
+.lastGame{
+  width: 100%;
+}
+
 .container-vic {
   width: 80%;
   background-color: #5383e8;
@@ -50,12 +54,12 @@
 }
 
 .image {
-  width: 26%;
   flex-direction: column;
   position: relative;
 }
 
 .image img {
+  margin-right: 20px;
   width: 100%;
   height: 100%;
 }
@@ -76,9 +80,6 @@
   .container-vic {
     width: 50%;
     font-size: 25px;
-  }
-  .image {
-    width: 20%;
   }
   .fly {
     top: 45%;

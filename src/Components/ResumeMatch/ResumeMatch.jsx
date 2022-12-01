@@ -69,6 +69,6 @@ const ResumeMatch = ({ puuid }) => {
     });
   }
 
-  return <div>{listing}</div>;
+  return <div className="lastGame">{listing}</div>;
 };
 export default ResumeMatch;

@@ -15,7 +15,6 @@ div.HeaderImage {
 div.ScuttlerContainer {
   display: flex;
   justify-content: space-between;
-  width: 10%;
   padding: 30px 0;
   margin-left: 15px;
 }
@@ -29,13 +28,14 @@ div.Scuttler {
 div.ScuttlerText {
   text-align: center;
   margin-top: 15px;
+  margin-left: 10px;
 }
 h1.Title {
   color: white;
   font-size: 20px;
   font-weight: bold;
 }
-h1.TitleText{
+h1.TitleText {
   position: absolute;
   top: 2%;
   left: 50%;
@@ -51,5 +51,14 @@ h2.Subtitle {
 }
 
 /* DESKTOP */
-@media only screen and (min-width: 600px) {
+@media only screen and (max-width: 1024px) {
+  h1.Title {
+    display: none;
+  }
+  h1.TitleText {
+    display: none;
+  }
+  div.HeaderContainer {
+    justify-content: center;
+  }
 }
