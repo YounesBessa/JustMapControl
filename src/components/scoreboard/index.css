@@ -1,15 +1,3 @@
-@media only screen and (min-width: 600px) {
-.teams{
-    display:flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    margin-top: 4%;
-}
-.blueTeam{
-    border-right: 3px solid black;
-}
-}
-
 .teamscontainer{
     flex-direction: column;
 }
@@ -159,3 +147,21 @@
     width: 20px;
     height: 20px;
 }
+
+@media only screen and (min-width: 600px) {
+    .teams{
+        display:flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        margin-top: 4%;
+    }
+    .blueTeam{
+        border-right: 3px solid black;
+    }
+    }
+    
+    @media only screen and (max-width: 600px) {
+    .redTeam{
+        margin-top: 10px;
+    }
+    }
