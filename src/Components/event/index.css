@@ -1,8 +1,17 @@
 .Event{
   display: flex;
-  width: 100%;
+  width: 90%;
   justify-content: space-around;
   align-items: center;
+  padding:8px;
+  border-bottom: 1px solid black;
+}
+
+.Event:first-child{
+  border-radius: 10px 10px 0 0;
+}
+.Event:last-child{
+  border-radius: 0 0 10px 10px;
 }
 @media only screen and (min-width: 600px) {
   .Event{
