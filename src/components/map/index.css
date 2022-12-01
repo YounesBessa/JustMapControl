@@ -8,4 +8,19 @@
 }
 .contain{
     color: #fff;
+    margin-bottom: 2rem;
+}
+.frameChanger{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin: 0 auto;
+}
+.frameChanger label{
+    margin: 0 auto;
+}
+
+.eventContainer{
+    width: 80%;
+    margin: 0 auto;
 }

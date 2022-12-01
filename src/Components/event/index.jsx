@@ -15,7 +15,6 @@ const Event = ({killer, victim, team, monster}) => {
         const response = await axios.get(
           process.env.REACT_APP_API_URL + "match/" + number + "/account/" + puuid
         );
-        console.log(response.data[0])
         setmatch(response.data[0]);
       } catch (error) {
         return [];
@@ -26,7 +25,6 @@ const Event = ({killer, victim, team, monster}) => {
       getmatch(puuid);
     }, []);
 
-    console.log(monster)
     if(monster){
         let style;
         let killerName;
@@ -47,19 +45,15 @@ const Event = ({killer, victim, team, monster}) => {
         }
 
         let monsterPic = '/images/' + monster + '.png';
-        console.log(monsterPic);
-        
         
         return(
-            <div className="Event" style={style}>
+            <div className="event" style={style}>
                 <img src={killerPic} alt={killerName}/>
                 <img src={kill} alt="killed"/>
                 <img src={monsterPic} alt={monster}/>
             </div>
         )
     } else {
-        console.log(killer)
-        console.log(victim)
 
         let style;
         let killerName;
@@ -85,15 +79,13 @@ const Event = ({killer, victim, team, monster}) => {
         }
         
         return(
-            <div className="Event" style={style}>
+            <div className="event" style={style}>
                 <img src={killerPic} alt={killerName}/>
                 <img src={kill} alt="killed"/>
                 <img src={victimPic} alt={victimName}/>
             </div>
         )
     }
-
-
     
 }
 export default Event;
