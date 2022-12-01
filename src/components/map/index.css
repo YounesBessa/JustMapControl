@@ -15,6 +15,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    /* flex-direction: column-reverse; */
 }
 
 .timelinecontainer {
@@ -29,7 +30,11 @@
     }
 
     .eventcontainer {
-        flex: 0.8;
+        flex: 1;
+    }
+
+    .eventandtimeline {
+        width: 40%;
     }
 
 }
@@ -37,5 +42,14 @@
 @media only screen and (max-width: 600px) {
     .Map {
         margin: 30px auto;
+    }
+    .eventcontainer {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    .eventandtimeline {
+        display:flex;
+        flex-direction: column-reverse;
     }
 }

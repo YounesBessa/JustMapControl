@@ -164,18 +164,20 @@ const Map = () => {
     <div className="contain">
       <div className="mapevents">
         <div className="Map">{info}</div>
-        <div className="eventcontainer">{listInfo}</div>
-      </div>
-      <div className="timelinecontainer">
-      <label>Frames (0 et {maxFrames})</label>
-      <input
-        type="range"
-        onChange={handleChange}
-        id="frames"
-        name="frames"
-        min="0"
-        max={maxFrames}
-      ></input>
+        <div className="eventandtimeline">
+          <div className="eventcontainer">{listInfo}</div>
+          <div className="timelinecontainer">
+            <label>Frames (0 et {maxFrames})</label>
+            <input
+              type="range"
+              onChange={handleChange}
+              id="frames"
+              name="frames"
+              min="0"
+              max={maxFrames}
+            ></input>
+          </div>
+        </div>
       </div>
     </div>
   );
