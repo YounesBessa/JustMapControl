@@ -126,41 +126,53 @@ const Champscore = ({
 
   return (
     <div className="flex container-score" style={style} key={index}>
-      <div className="relat">
-        <img className="imgChamp" src={champ} alt={champ}></img>
-        <p className="level">{level}</p>
-      </div>
-      <div className="summmonerinfo">
-        <p>{pseudo}</p>
+      <div
+        className="scorecontent"
+        style={{
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+          width: "100%",
+        }}
+      >
+        <div className="summonerinfo">
+          <span>{pseudo}</span>
+          <span className="level">Level {level}</span>
+          <div className="relat">
+            <img className="imgChamp" src={champ} alt={champ}></img>
+          </div>
+        </div>
         <div className="summonerspells">
           <img className="imgSpell" src={invspell1} alt="sort1"></img>
           <img className="imgSpell" src={invspell2} alt="sort2"></img>
         </div>
-        <p>{kda}</p>
-      </div>
-
-      <div className="flex-column"></div>
-      <div className="flex-column gap"></div>
-      <div className="flex-column gap">
-        <div style={{ display: "flex", flexDirection: "column" }}>
-          <div className="damage">Dégats: {dmg}</div>
+        <div className="kda">
+          <span>KDA:</span> <span>{kda}</span>
         </div>
-        <p>Sbires tués: {cs}</p>
-      </div>
-      <div className="flex items">
-        <div className="flex-column">
-          <img className="imgItem" src={item1Src} alt="item1"></img>
-          <img className="imgItem" src={item2Src} alt="item2"></img>
+        <div className="flex-column"></div>
+        <div className="flex-column gap"></div>
+        <div className="flex-column gap">
+          <div className="damageandcs">
+            <div className="damage"><span>Dégats:</span> <span>{dmg}</span></div>
+            <div className="cs"><span>Sbires tués:</span> <span>{cs}</span></div>
+            
+          </div>
         </div>
-        <div className="flex-column">
-          <img className="imgItem" src={item3Src} alt="item3"></img>
-          <img className="imgItem" src={item4Src} alt="item4"></img>
+        <div className="flex items">
+          <div className="flex-column">
+            <img className="imgItem" src={item1Src} alt="item1"></img>
+            <img className="imgItem" src={item2Src} alt="item2"></img>
+          </div>
+          <div className="flex-column">
+            <img className="imgItem" src={item3Src} alt="item3"></img>
+            <img className="imgItem" src={item4Src} alt="item4"></img>
+          </div>
+          <div className="flex-column">
+            <img className="imgItem" src={item5Src} alt="item5"></img>
+            <img className="imgItem" src={item6Src} alt="item6"></img>
+          </div>
+          <img className="imgItem" src={item7Src} alt="item7"></img>
         </div>
-        <div className="flex-column">
-          <img className="imgItem" src={item5Src} alt="item5"></img>
-          <img className="imgItem" src={item6Src} alt="item6"></img>
-        </div>
-        <img className="imgItem" src={item7Src} alt="item7"></img>
       </div>
     </div>
   );

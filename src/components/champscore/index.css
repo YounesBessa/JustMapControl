@@ -5,6 +5,11 @@
     display: flex;
     flex-direction: column;
 }
+.summoneinfo{
+    display: flex;
+    flex-direction: column;
+    margin-right: 5px;
+}
 .relat{
     position: relative;
 }
@@ -19,14 +24,19 @@
     align-items: center;
     border-bottom: 1px solid black;
 }
-.level{
-    position: absolute;
-    bottom: 0;
-    right: 0;
+.summonerinfo{
+display: flex;
+flex-direction: column;
 }
 .imgChamp{
     width: 50px;
     height: 50px;
+}
+.summonerspells{
+    display: flex;
+    flex-direction: column;
+    margin-right: 5px;
+    margin-left: 5px;
 }
 .imgSpell{
     width: 25px;
@@ -36,17 +46,36 @@
     width: 40px;
     height: 40px;
 }
-.damage{
-    border-width: 1px;
-    border-color: black;
+
+@media only screen and (max-width: 600px) {
+    .kda{
+        margin-top: 5px;
+    }
+    .cs{
+        margin-top: 5px;
+    }
 }
 
 @media only screen and (min-width: 600px) {
 .container-score{
-    width: 400px;
-    padding-right: 30%;
-    padding-left: 10%;
+    padding:3% 10% 3% 8%;
     border-radius: 0 10px 10px 0;
+}
+.damageandcs{
+    display: flex;
+    flex-direction: row;
+}
+.damage{
+    display: flex;
+    flex-direction: column;
+}
+
+.cs{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin-right:30px;
+    margin-left:30px;
 }
 
 }
