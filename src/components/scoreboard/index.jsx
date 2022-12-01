@@ -125,48 +125,61 @@ const ScoreBoard = () => {
       var totalRgoldgame = (totalRgold / totalgoldgame) * 100;
       var html = (
         <div key="1">
-                    <div className="middleInfo">
+          <div className="middleInfo">
             <div className="totBars flex-column">
-            <ul className="statKills flex">
-                  <li className="bKill" style={{color: '#5383e8'}}>
-                    {matchdetails.matchJson.teams[0].objectives.champion.kills}
-                  </li>
-                  <li className="totKill">Total Kill</li>
-                  <li className="rKill" style={{color: '#f12b15'}}>
-                    {matchdetails.matchJson.teams[1].objectives.champion.kills}
-                  </li>
-                </ul>
+              <ul className="statKills flex">
+                {/* <li className="bKill" style={{ color: "#5383e8" }}>
+                  {matchdetails.matchJson.teams[0].objectives.champion.kills}
+                </li> */}
+                <li className="totKill">Total Kill</li>
+                {/* <li className="rKill" style={{ color: "#f12b15" }}>
+                  {matchdetails.matchJson.teams[1].objectives.champion.kills}
+                </li> */}
+              </ul>
               <div className="totKills">
                 <div className="killBar">
                   <div
                     className="blueKills"
                     style={{ width: totalB + "%" }}
-                  ></div>
+                  > <li className="bKill" style={{ color: "white" }}>
+                  {matchdetails.matchJson.teams[0].objectives.champion.kills}
+                </li></div>
                   <div
                     className="redKills"
                     style={{ width: totalR + "%" }}
-                  ></div>
+                  ><li className="rKill" style={{ color: "white" }}>
+                  {matchdetails.matchJson.teams[1].objectives.champion.kills}
+                </li></div>
                 </div>
               </div>
               <ul className="statGolds flex">
-                  <li className="bGold" style={{color: '#5383e8'}}>{totalBgold}</li>
-                  <li className="totGold">Total Gold</li>
-                  <li className="rGold" style={{color: '#f12b15'}}>{totalRgold}</li>
-                </ul>
+                {/* <li className="bGold" style={{ color: "#5383e8" }}>
+                  {totalBgold}
+                </li> */}
+                <li className="totGold">Total Gold</li>
+                {/* <li className="rGold" style={{ color: "#f12b15" }}>
+                  {totalRgold}
+                </li> */}
+              </ul>
               <div className="totGolds">
                 <div className="goldBar">
                   <div
                     className="blueGolds"
                     style={{ width: totalBgoldgame + "%" }}
-                  ></div>
+                  ><li className="bGold" style={{ color: "white" }}>
+                  {totalBgold}
+                </li></div>
                   <div
                     className="redGolds"
                     style={{ width: totalRgoldgame + "%" }}
-                  ></div>
+                  ><li className="rGold" style={{ color: "white" }}>
+                  {totalRgold}
+                </li></div>
                 </div>
               </div>
             </div>
           </div>
+          <div className="teamscontainer">
           <div className="teamsObj">
             <div className="blueObj flex">
               <div className="flex-column obj">
@@ -197,9 +210,10 @@ const ScoreBoard = () => {
               </div>
             </div>
           </div>
-          <div className="teams">
-            <div className="blueTeam">{blueTeam}</div>
-            <div className="redTeam">{redTeam}</div>
+            <div className="teams">
+              <div className="blueTeam">{blueTeam}</div>
+              <div className="redTeam">{redTeam}</div>
+            </div>
           </div>
         </div>
       );
