@@ -140,11 +140,13 @@ const Map = () => {
             <div className="Map">
                 {info}
             </div>
-            <div>
+            <div className="frameChanger">
+                <label>Frames 0 sur {maxFrames}</label>
+                <input type="range" onChange={handleChange} id="frames" name="frames" min="0" max={maxFrames}></input>
+            </div>
+            <div className="eventContainer">
                 {listInfo}
             </div>
-            <label>Frames (0 et {maxFrames})</label>
-            <input type="range" onChange={handleChange} id="frames" name="frames" min="0" max={maxFrames}></input>
         </div>
     )
 }
