@@ -137,9 +137,9 @@ const Champscore = ({
       >
         <div className="summonerinfo">
           <span>{pseudo}</span>
-          <span className="level">Level {level}</span>
           <div className="relat">
             <img className="imgChamp" src={champ} alt={champ}></img>
+            <span className="level">{level}</span>
           </div>
         </div>
         <div className="summonerspells">
@@ -147,14 +147,14 @@ const Champscore = ({
           <img className="imgSpell" src={invspell2} alt="sort2"></img>
         </div>
         <div className="kda">
-          <span>KDA:</span> <span>{kda}</span>
+          <span>{kda}</span>
         </div>
         <div className="flex-column"></div>
         <div className="flex-column gap"></div>
         <div className="flex-column gap">
           <div className="damageandcs">
             <div className="damage"><span>Dégats:</span> <span>{dmg}</span></div>
-            <div className="cs"><span>Sbires tués:</span> <span>{cs}</span></div>
+            <div className="cs"><span>CS:</span> <span>{cs}</span></div>
             
           </div>
         </div>
