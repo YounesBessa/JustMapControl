@@ -11,6 +11,7 @@ const Map = () => {
     const [matchtimeline, setmatch] = React.useState("vide");
     const [info, setInfo] = React.useState('');
     const [listInfo, setListInfo] = React.useState('');
+    const [framevisual,setframe] = React.useState(0);
 
     const getmatch = (idmatch) => {
 
@@ -35,6 +36,7 @@ const Map = () => {
    
     function handleChange(event) {
         const frames = event.target.value;
+        setframe(frames);
         if(frames === maxFrames){
             var match = matchtimeline.matchJson.frames.map((frame) =>
                 frame.events.map((event,index) => {
@@ -141,7 +143,7 @@ const Map = () => {
                 {info}
             </div>
             <div className="frameChanger">
-                <label>Frames 0 sur {maxFrames}</label>
+                <label>Frames {framevisual} sur {maxFrames}</label>
                 <input type="range" onChange={handleChange} id="frames" name="frames" min="0" max={maxFrames}></input>
             </div>
             <div className="eventContainer">
