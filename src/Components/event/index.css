@@ -1,0 +1,16 @@
+.event{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.event:hover{
+    opacity: 0.5;
+}
+
+.event img{
+    width: 4rem;
+    height: 4rem;
+}

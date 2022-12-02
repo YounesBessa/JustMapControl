@@ -1,37 +1,119 @@
-.flex{
+.flex {
     display: flex;
 }
-.flex-column{
+
+.flex-column {
     display: flex;
     flex-direction: column;
 }
-.relat{
-    position: relative;
+
+.summoneinfo {
+    display: flex;
+    flex-direction: column;
+    margin-right: 5px;
 }
-.gap{
+
+.relat {
+    position: relative;
+    width: fit-content;
+}
+
+.level {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+.gap {
     gap: 5px;
 }
-.container-score{
+
+.container-score {
     width: 100%;
     color: #FFF;
     font-size: 14px;
     justify-content: space-between;
     align-items: center;
+    border-bottom: 1px solid black;
 }
-.level{
-    position: absolute;
-    bottom: 0;
-    right: 0;
+
+.summonerinfo {
+    display: flex;
+    flex-direction: column;
 }
-.imgChamp{
+
+.imgChamp {
     width: 50px;
     height: 50px;
 }
-.imgSpell{
-    width: 25px;
-    height: 25px;
+
+.summonerspells {
+    display: flex;
+    flex-direction: column;
+    margin-left: 5px;
 }
-.damage{
-    border-width: 1px;
-    border-color: black;
+
+.imgSpell {
+    width: 35px;
+    height: 35px;
+}
+
+.imgItem {
+    width: 40px;
+    height: 40px;
+
+    align-self: center;
+}
+
+.kda {
+    margin-right: 5px;
+    margin-left: 5px;
+}
+
+@media only screen and (max-width: 600px) {
+    .cs {
+        margin-top: 5px;
+    }
+}
+
+@media only screen and (min-width: 600px) {
+    .container-score {
+        padding: 3% 10% 3% 8%;
+        /* border-radius: 0 10px 10px 0; */
+    }
+
+    .blueTeam>.container-score:first-child {
+        border-radius: 10px 0 0 0;
+    }
+
+    .redTeam>.container-score:first-child {
+        border-radius: 0 10px 0 0;
+    }
+
+    .blueTeam>.container-score:last-child {
+        border-radius: 0 0 0 10px;
+    }
+
+    .redTeam>.container-score:last-child {
+        border-radius: 0 0 10px 0;
+    }
+
+    .damageandcs {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .damage {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .cs {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        margin-right: 30px;
+        margin-left: 30px;
+    }
+
 }

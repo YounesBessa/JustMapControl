@@ -1,10 +1,10 @@
 import "./ResumeMatch.css";
 import React from "react";
 import { Link } from "react-router-dom";
+import axios from "axios";
 
 const ResumeMatch = ({ puuid }) => {
   const [matchlist, setmatchlist] = React.useState();
-  const axios = require("axios");
   async function getAllmatchs(puuid) {
     try {
       const response = await axios.get(
@@ -18,7 +18,6 @@ const ResumeMatch = ({ puuid }) => {
         }
       );
       setmatchlist(response.data);
-      return response.data;
     } catch (error) {
       return [];
     }
@@ -26,7 +25,7 @@ const ResumeMatch = ({ puuid }) => {
 
   React.useEffect(() => {
     getAllmatchs(puuid);
-  });
+  }, []);
 
   if (matchlist) {
     var listing = matchlist.map((match) => {
@@ -44,7 +43,7 @@ const ResumeMatch = ({ puuid }) => {
         winclass = "flex container";
       }
       var html = (
-        <div className={winclass}>
+        <div className={winclass} key={match.idMatch}>
           <Link
             to={"/match/" + match.idMatch + "/" + puuid}
             key={match.idMatch}
@@ -70,6 +69,6 @@ const ResumeMatch = ({ puuid }) => {
     });
   }
 
-  return <div>{listing}</div>;
+  return <div className="lastGame">{listing}</div>;
 };
 export default ResumeMatch;

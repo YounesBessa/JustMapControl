@@ -9,27 +9,18 @@ const Searchbar: React.FC = () => {
   const [pseudo, setPseudo] = useState("");
 
   async function getAccount(region: string, pseudo: string) {
-    try {
+    if (region !== "" && pseudo !== "") {
       const response = await axios.get(
         process.env.REACT_APP_API_URL +
           "account/" +
           pseudo +
           "/region/" +
-          region,
-        {
-          headers: {
-            "Access-Control-Allow-Origin": "*",
-            "Access-Control-Allow-Headers": "*",
-            "Access-Control-Allow-Credentials": "true",
-          },
-        }
+          region
       );
       setPuuid(response.data[0].puuid);
-      return response.data;
-    } catch (error) {
-      return [];
     }
   }
+
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     // 👇️ prevent page refresh
     event.preventDefault();
@@ -41,9 +32,9 @@ const Searchbar: React.FC = () => {
 
   React.useEffect(() => {
     getAccount(region, pseudo);
-  });
+  }, [region, pseudo, puuid]);
   return (
-    <div>
+    <div className="wrapper">
       <div className="SeachbarWrap">
         <form onSubmit={handleSubmit}>
           <div className="Searchbar">
@@ -64,7 +55,7 @@ const Searchbar: React.FC = () => {
               id="pseudo"
               type="text"
               className="SearchTerm"
-              placeholder="Enter Summoner Name"
+              placeholder="Nom d'invocateur"
             />
             <button type="submit" className="SearchButton">
               <span className="ButtonText">Go</span>
@@ -72,7 +63,8 @@ const Searchbar: React.FC = () => {
           </div>
         </form>
       </div>
-      <ResumeMatch puuid={puuid} />
+      {puuid !== "" && <ResumeMatch puuid={puuid} key={puuid}/>}
+      {puuid === "" && <img className="apercu" src="/images/search.png" alt="resultat de recherche"/>}
     </div>
   );
 };
