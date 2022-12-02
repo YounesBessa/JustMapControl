@@ -6,6 +6,10 @@
     margin: 0 auto;
 }
 
+.event:hover{
+    opacity: 0.5;
+}
+
 .event img{
     width: 4rem;
     height: 4rem;
