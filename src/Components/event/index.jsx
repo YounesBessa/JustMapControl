@@ -16,7 +16,7 @@ const Event = ({ killer, victim, team, monster, hov }) => {
     const beacons = document.querySelectorAll(".Beacon");
     beacons.forEach((beacon) => {
       if (beacon.getAttribute("data-hov") === hov) {
-        beacon.style.backgroundColor = "salmon";
+        beacon.style.opacity = "1";
       }
     });
   }
@@ -26,7 +26,7 @@ const Event = ({ killer, victim, team, monster, hov }) => {
     const beacons = document.querySelectorAll(".Beacon");
     beacons.forEach((beacon) => {
       if (beacon.getAttribute("data-hov") === hov) {
-        beacon.style.backgroundColor = "white";
+        beacon.style.opacity = "0.5";
       }
     });
   }

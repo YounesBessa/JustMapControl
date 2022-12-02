@@ -25,7 +25,7 @@ const Beacon = ({ x, y, team, hov }) => {
     const events = document.querySelectorAll(".event");
     events.forEach((event) => {
       if (event.getAttribute("data-hov") === hov) {
-        event.style.backgroundColor = "salmon";
+        event.style.opacity = "0.5";
       }
     });
   }
@@ -35,7 +35,7 @@ const Beacon = ({ x, y, team, hov }) => {
     const events = document.querySelectorAll(".event");
     events.forEach((event) => {
       if (event.getAttribute("data-hov") === hov) {
-        event.style.backgroundColor = "white";
+        event.style.opacity = "1";
       }
     });
   }
