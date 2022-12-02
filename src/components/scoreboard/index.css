@@ -1,3 +1,7 @@
+.teamscontainer{
+    flex-direction: column;
+}
+
 .flex-column{
     display: flex;
     flex-direction: column;
@@ -6,36 +10,40 @@
     display: flex;
 }
 .middleInfo{
-    margin-top: 4%;
-    margin-bottom: 4%;
     color: #FFF;
 }
-.blueObj{
+.teamsObj{
+    margin-top: 4%;
+    margin-bottom: 4%;
+    display: flex;
+    align-items: baseline;
     justify-content: space-around;
+}
+.blueObj{
+    justify-content: space-evenly;
     margin-bottom: 3%;
+    width:fit-content;
+    margin: 0 auto;
+    flex:1.3;
 }
 .redObj{
-    justify-content: space-around;
+    justify-content: space-evenly;
     margin-top: 3%;
+    width:fit-content;
+    flex:1;
 }
 .obj{
     align-items: center;
     gap: 2px;
     color: #FFF;
 }
-
-.totGolds{
-    margin-top: 3%;
-}
 .statGolds{
     justify-content: space-around;
-    position: relative;
 }
 .goldBar{
     display: flex;
-}
-.statGolds li{
-    position: absolute;
+    margin: 0 auto;
+    width: 80%;
 }
 .rGold{
     top: -22px;
@@ -61,13 +69,14 @@
 
 .statKills{
     justify-content: space-around;
-    position: relative;
 }
 .killBar{
     display: flex;
+    margin: 0 auto;
+    width: 80%;
 }
-.statKills li{
-    position: absolute;
+.totKills{
+    margin-bottom: 3%;
 }
 .rKill{
     top: -22px;
@@ -89,6 +98,11 @@
 .redKills{
     background-color: rgb(241, 43, 21, 0.5);
     height: 30px;
+}
+
+.bKill, .rKill, .bGold, .rGold{
+    list-style-type:none;
+    text-align: center;
 }
 
 .bNashImg{
@@ -133,3 +147,21 @@
     width: 20px;
     height: 20px;
 }
+
+@media only screen and (min-width: 600px) {
+    .teams{
+        display:flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        margin-top: 4%;
+    }
+    .blueTeam{
+        border-right: 3px solid black;
+    }
+    }
+    
+    @media only screen and (max-width: 600px) {
+    .redTeam{
+        margin-top: 10px;
+    }
+    }

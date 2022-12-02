@@ -11,7 +11,7 @@ const MatchPage: React.FunctionComponent<IMatchPageProps> = (props) => {
   return (
     <div>
       <Header />
-      <div className="mapContainer">
+      <div className="mapContainer" style={{marginTop:"30px"}}>
         <Map />
       </div>
       <div className="ScorBoard">
